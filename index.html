@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiyan Gandhi Manara | Data Entry, Admin Support & Web Research Specialist</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-dark: #0f342c;
+      --primary-teal: #19584d;
+      --teal-light: #eaf3f0;
+      --teal-badge: #2d7a6e;
+      --accent-amber: #e5a84b;
+      --accent-hover: #d29437;
+      --bg-page: #f5f8f7;
+      --surface-white: #ffffff;
+      --text-main: #1d2c28;
+      --text-muted: #536963;
+      --border-color: #dce7e4;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 4px 12px rgba(15, 52, 44, 0.05);
+      --shadow-md: 0 8px 24px rgba(15, 52, 44, 0.08);
+      --shadow-lg: 0 16px 36px rgba(15, 52, 44, 0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Container Utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation Bar */
+    header {
+      background-color: rgba(15, 52, 44, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo span {
+      color: var(--accent-amber);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #e0eae7;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-amber);
+    }
+
+    .btn-contact {
+      background-color: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .btn-contact:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section (Slide 1) */
+    .hero {
+      background-color: var(--primary-dark);
+      color: #fff;
+      padding: 90px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-badge {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-roles {
+      font-size: 1.15rem;
+      color: #cbdcd7;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--accent-amber);
+      margin-bottom: 30px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 14px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(229, 168, 75, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 14px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+    }
+
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-avatar {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent-amber);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Section Header */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+    }
+
+    /* About Me & Personal Skills (Slide 2) */
+    .about-section {
+      padding: 90px 0;
+      background-color: var(--surface-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-box {
+      background: var(--bg-page);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      border: 1px solid var(--border-color);
+    }
+
+    .about-box h3 {
+      font-size: 1.4rem;
+      color: var(--primary-teal);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-box p {
+      margin-bottom: 16px;
+      color: var(--text-main);
+      font-size: 1rem;
+    }
+
+    .exp-counter {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--border-color);
+    }
+
+    .exp-num {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--primary-teal);
+      line-height: 1;
+    }
+
+    .exp-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .skill-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg-page);
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover {
+      transform: translateX(6px);
+      border-color: var(--primary-teal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+      background-color: var(--primary-teal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .skill-info h4 {
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .skill-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* 3 Services Section (Slide 3) */
+    .services-section {
+      padding: 90px 0;
+      background-color: var(--bg-page);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .service-card {
+      background: var(--surface-white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-teal);
+    }
+
+    .service-icon-box {
+      width: 65px;
+      height: 65px;
+      background-color: var(--primary-teal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .service-list {
+      list-style: none;
+      margin-bottom: 26px;
+      flex-grow: 1;
+    }
+
+    .service-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--primary-teal);
+      font-size: 1.6rem;
+      position: absolute;
+      left: 0;
+      top: -6px;
+    }
+
+    .service-btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary-teal);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .service-btn:hover {
+      color: var(--accent-hover);
+      gap: 8px;
+    }
+
+    /* Tools Bar (Slide 3 bottom) */
+    .tools-banner {
+      background-color: var(--primary-dark);
+      color: #fff;
+      border-radius: 40px;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .tools-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tools-chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tool-chip {
+      background-color: var(--primary-teal);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: var(--transition);
+    }
+
+    .tool-chip:hover {
+      background-color: var(--accent-amber);
+      color: var(--primary-dark);
+    }
+
+    /* Portfolio Section (Slide 4 - 16) */
+    .portfolio-section {
+      padding: 95px 0;
+      background-color: var(--surface-white);
+    }
+
+    /* Filter Tabs */
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-page);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary-teal);
+      color: #fff;
+      border-color: var(--primary-teal);
+      box-shadow: 0 4px 14px rgba(25, 88, 77, 0.25);
+    }
+
+    /* Project Cards Container */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .project-card {
+      background: var(--surface-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: #bcd0cb;
+    }
+
+    .project-header-bar {
+      padding: 24px 34px 18px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #fbfdfc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .project-header-bar h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--primary-dark);
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag-service {
+      background-color: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .tag-tools {
+      background-color: var(--primary-teal);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-body {
+      padding: 34px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+    }
+
+    .project-details h4 {
+      font-size: 1.05rem;
+      color: var(--primary-teal);
+      margin-top: 14px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .project-details p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .project-bullets {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .project-bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .project-bullets li::before {
+      content: "✓";
+      color: var(--primary-teal);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Deliverables Pills (Slide style) */
+    .deliverables-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .deliv-pill {
+      background-color: #d8ece7;
+      color: var(--primary-dark);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-alert {
+      background-color: var(--teal-light);
+      border-left: 4px solid var(--primary-teal);
+      padding: 12px 18px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* Screenshot Evidence Showcase */
+    .project-evidence {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .evidence-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-page);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .evidence-header {
+      background-color: var(--primary-teal);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .evidence-img-container {
+      position: relative;
+      cursor: zoom-in;
+      overflow: hidden;
+      max-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eaeff0;
+    }
+
+    .evidence-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .evidence-img-container:hover img {
+      transform: scale(1.03);
+    }
+
+    .img-zoom-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 52, 44, 0.75);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* Stats Counter Bar inside Project (e.g. Project 5 & 6) */
+    .metric-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .metric-box {
+      flex: 1;
+      background: #f0f6f4;
+      border: 1px solid #d4e5e1;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+
+    .metric-box .num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-teal);
+    }
+
+    .metric-box .lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Workflow Pills (Project 2 & 6) */
+    .workflow-steps {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+
+    .wf-step {
+      background: var(--primary-teal);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .wf-arrow {
+      color: var(--accent-amber);
+      font-weight: bold;
+    }
+
+    /* Lightbox Modal for Real Evidence Inspection */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 29, 25, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 92%;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent-amber);
+    }
+
+    /* Contact Section (Slide 17) */
+    .contact-section {
+      background-color: var(--primary-dark);
+      color: #fff;
+      padding: 95px 0 70px;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-info .badge {
+      color: var(--accent-amber);
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .contact-info p {
+      color: #cbdcd7;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .hire-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .hire-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .contact-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-link-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: var(--transition);
+    }
+
+    .contact-link-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-amber);
+      transform: translateX(8px);
+    }
+
+    .contact-icon-box {
+      width: 50px;
+      height: 50px;
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .contact-text-box .title {
+      font-size: 0.85rem;
+      color: #9cb5ae;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-text-box .val {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #09211c;
+      color: #79958e;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .project-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Tiyan</span> Gandhi
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Portfolio Projects</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+      <a href="#contact" class="btn-contact">Hire Me</a>
+    </div>
+  </header>
+
+  <!-- Hero Section (Slide 1) -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge">P O R T F O L I O</span>
+        <h1>Tiyan Gandhi Manara</h1>
+        <p class="hero-roles">Data Entry &bull; Admin Support &bull; Web Research & Lead Lists &bull; Excel & Google Sheets</p>
+        <p class="hero-tagline">"Clean, organized, and reliable data you can use right away"</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary"><i class="fa-solid fa-folder-open"></i> Explore Projects</a>
+          <a href="#contact" class="btn-secondary"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <!-- Ganti foto dengan foto profil Anda -->
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Tiyan Gandhi Manara" class="hero-avatar">
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Skills Section (Slide 2) -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Left: Who I Am -->
+        <div class="about-box">
+          <h3><i class="fa-regular fa-user"></i> Who I Am</h3>
+          <p>Data entry and administrative support specialist with <strong>15+ years</strong> in administration, procurement, credit analysis, and operations across finance, distribution, and startup teams.</p>
+          <p>I turn messy records into clean, accurate spreadsheets and build Excel and Google Sheets reports and dashboards.</p>
+          <p>I follow instructions closely and check my work before delivery, so you get reliable, well-organized data on time.</p>
+          
+          <div class="exp-counter">
+            <div class="exp-num">15+</div>
+            <div class="exp-text">Years across finance, procurement, operations, and early-stage ventures</div>
+          </div>
+        </div>
+
+        <!-- Right: Personal Skills -->
+        <div class="skills-list">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-info">
+              <h4>Attention to Detail</h4>
+              <p>Records every correction in a change log and flags unclear items instead of guessing.</p>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-folder-tree"></i></div>
+            <div class="skill-info">
+              <h4>Organization</h4>
+              <p>Managed stock and inventory records, vendor contracts, and SOP documentation.</p>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="skill-info">
+              <h4>Time Management</h4>
+              <p>Prepared weekly and monthly Excel reports and handled monthly closing and payroll submissions.</p>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <div class="skill-info">
+              <h4>Problem-Solving</h4>
+              <p>Compared vendor costs and built a Google Sheets dashboard for easier fee-data updates.</p>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-regular fa-comments"></i></div>
+            <div class="skill-info">
+              <h4>Communication</h4>
+              <p>Coordinated with partners and vendors, and supported regional operations across Java, Bali, and Lombok.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Tools Section (Slide 3) -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 class="section-title">Services & Tools</h2>
+      <p class="section-subtitle">Dedicated virtual assistance and spreadsheet solutions tailored to keep your business running smoothly.</p>
+
+      <!-- 3 Service Cards -->
+      <div class="services-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon-box"><i class="fa-solid fa-keyboard"></i></div>
+          <h3>Data Entry & Data Cleaning</h3>
+          <ul class="service-list">
+            <li>Accurate entry of records in Excel and Google Sheets</li>
+            <li>Cleaning, standardizing, and de-duplicating data</li>
+            <li>Change logs and flagged questions for unclear items</li>
+          </ul>
+          <a href="#projects" class="service-btn" onclick="applyFilter('data-cleaning')">
+            <span>View Related Projects</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon-box"><i class="fa-solid fa-folder"></i></div>
+          <h3>Admin Support</h3>
+          <ul class="service-list">
+            <li>Stock, PO, invoice, and payment records</li>
+            <li>Weekly and monthly reports, SOP documentation</li>
+            <li>Spreadsheet systems with automated workflows</li>
+          </ul>
+          <a href="#projects" class="service-btn" onclick="applyFilter('admin-support')">
+            <span>View Related Projects</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Web Research & Lead List</h3>
+          <ul class="service-list">
+            <li>Finding companies and decision-makers from public sources</li>
+            <li>Business contact research with source and verification status</li>
+            <li>A structured lead list with source links and verification status</li>
+          </ul>
+          <a href="#projects" class="service-btn" onclick="applyFilter('web-research')">
+            <span>View Related Projects</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Tools I Use Banner -->
+      <div class="tools-banner">
+        <div class="tools-label">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Tools I Use:
+        </div>
+        <div class="tools-chips">
+          <span class="tool-chip"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</span>
+          <span class="tool-chip"><i class="fa-solid fa-table"></i> Google Sheets</span>
+          <span class="tool-chip"><i class="fa-solid fa-search"></i> Google Search Operators</span>
+          <span class="tool-chip"><i class="fa-solid fa-rocket"></i> Apollo.io</span>
+          <span class="tool-chip"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Portfolio Projects (Slides 4 - 16) -->
+  <section class="portfolio-section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Portfolio Projects</h2>
+      <p class="section-subtitle">Real spreadsheet systems, verified leads, and clean databases with proof of delivery.</p>
+
+      <!-- Filter Buttons -->
+      <div class="filter-wrapper">
+        <button class="filter-btn active" data-filter="all">All Projects (6)</button>
+        <button class="filter-btn" data-filter="data-cleaning">Data Entry & Cleaning</button>
+        <button class="filter-btn" data-filter="admin-support">Admin Support</button>
+        <button class="filter-btn" data-filter="web-research">Web Research & Lead List</button>
+      </div>
+
+      <!-- Projects List -->
+      <div class="projects-container">
+
+        <!-- PROJECT 1 (Slides 4-5) -->
+        <article class="project-card" data-category="data-cleaning admin-support">
+          <div class="project-header-bar">
+            <h3>Project 1: Order Data Cleaning & Processing</h3>
+            <div class="project-tags">
+              <span class="tag-service">Data Entry & Cleaning</span>
+              <span class="tag-service">Admin Support</span>
+              <span class="tag-tools">Google Sheets | Excel</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>Cleaned and standardized a fictional customer order database merged from several sources: a CRM export, a sales spreadsheet, and manual entries.</p>
+
+                <h4>What I Did</h4>
+                <ul class="project-bullets">
+                  <li>Standardized names, company names, cities, and states</li>
+                  <li>Unified phone numbers, ZIP codes with leading zeros, dates (MM/DD/YYYY), and amounts as numbers</li>
+                  <li>Standardized order statuses and removed duplicate and test records</li>
+                  <li>Fixed email typos only when confirmed, and flagged unclear items instead of guessing</li>
+                </ul>
+
+                <div class="deliverables-title">Deliverables:</div>
+                <div class="deliverables-grid">
+                  <div class="deliv-pill">Clean Data sheet, ready to import</div>
+                  <div class="deliv-pill">Change Log of every correction</div>
+                  <div class="deliv-pill">Flagged Items for the client</div>
+                  <div class="deliv-pill">Needs Review formula column</div>
+                </div>
+
+                <div class="result-alert">
+                  <strong>Result:</strong> A consistent, import-ready dataset with a full record of every change.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>CHANGE LOG & FLAGGED ITEMS</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <!-- Taruh gambar export Slide 4 di sini -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900" alt="Change Log Documentation">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>BEFORE vs AFTER (Clean, Import-Ready Data)</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <!-- Taruh gambar export Slide 5 di sini -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900" alt="Before and After Clean Data">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 (Slides 6-7) -->
+        <article class="project-card" data-category="admin-support data-cleaning">
+          <div class="project-header-bar">
+            <h3>Project 2: Inventory & Sales Tracking System</h3>
+            <div class="project-tags">
+              <span class="tag-service">Admin Support</span>
+              <span class="tag-service">Data Entry</span>
+              <span class="tag-tools">Microsoft Excel</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>An end-to-end Excel system, from purchasing to profit reporting. Built and used daily for an investor-backed import and distribution venture (beef and frozen buffalo) across West Java and other regions.</p>
+
+                <h4>Workflow</h4>
+                <div class="workflow-steps">
+                  <span class="wf-step">Master Data</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">PO</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">Stock In</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">Invoice/Out</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">Stock Balance</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">Reports</span>
+                </div>
+
+                <h4>What It Does</h4>
+                <ul class="project-bullets">
+                  <li>Records POs, stock in, stock out, and adjustments for shrinkage</li>
+                  <li>Prints POs and invoices, and updates stock balances automatically</li>
+                  <li>Reports sales, margin, payables, receivables, and daily profit and loss</li>
+                </ul>
+
+                <div class="result-alert">
+                  <strong>My Role:</strong> Designed workflow, built formulas (FILTER, IF, AND), entered daily data, and prepared weekly/monthly closing reports.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>STOCK BALANCE & INVOICE TEMPLATE</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=900" alt="Stock Balance and Invoice Sheet">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>STOCK OUT & MONTHLY SALES REPORT</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=900" alt="Sales Report Monthly View">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 (Slides 8-9) -->
+        <article class="project-card" data-category="admin-support data-cleaning">
+          <div class="project-header-bar">
+            <h3>Project 3: Community Fee Administration System</h3>
+            <div class="project-tags">
+              <span class="tag-service">Admin Support</span>
+              <span class="tag-tools">Google Sheets | Apps Script | GitHub Pages</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>A fee administration system for a housing committee. A housing committee tracked monthly community fees in a large Google Sheet full of formulas. One wrong click could delete data, so I built a simple web interface on top of the sheet.</p>
+
+                <h4>What It Does</h4>
+                <ul class="project-bullets">
+                  <li>Dashboard with house totals, paid vs. unpaid this month, and arrears filterable by block</li>
+                  <li>Separate login page for the committee to add transactions without altering the base sheet</li>
+                  <li>Payment instructions with WhatsApp confirmation links for residents</li>
+                </ul>
+
+                <h4>How It Works</h4>
+                <p>One Google Sheets file stays as the single source of truth. Google Apps Script connects it to web pages (HTML, CSS, JS) on GitHub Pages, keeping formulas and settings protected.</p>
+
+                <div class="result-alert">
+                  <strong>My Role:</strong> Workflow design, data structure, logic, and maintaining accurate monthly records.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>WEB DASHBOARD & COMMITTEE VIEW</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=900" alt="Community Fee Dashboard">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>BACKEND: GOOGLE APPS SCRIPT & GITHUB</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=900" alt="Script Automation Integration">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 (Slides 10-11) -->
+        <article class="project-card" data-category="web-research data-cleaning">
+          <div class="project-header-bar">
+            <h3>Project 4: Web Research & Lead List Building (Indonesia Meat Industry)</h3>
+            <div class="project-tags">
+              <span class="tag-service">Web Research & Lead List</span>
+              <span class="tag-service">Data Cleaning</span>
+              <span class="tag-tools">Google Operators | LinkedIn | Apollo</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>B2B company research built around a simulated client brief to research potential B2B buyers in Indonesia’s beef and buffalo meat industry.</p>
+
+                <h4>Research Workflow</h4>
+                <ul class="project-bullets">
+                  <li>Searched with Google search operators and vetted each website</li>
+                  <li>Identified key decision-makers from company websites and LinkedIn</li>
+                  <li>Recorded verified business contact details and documented email status</li>
+                  <li>Standardized data, removed duplicates, and reviewed every row</li>
+                </ul>
+
+                <div class="deliverables-title">Deliverables:</div>
+                <div class="deliverables-grid">
+                  <div class="deliv-pill">Company list with contact fields</div>
+                  <div class="deliv-pill">Email-check status for contacts</div>
+                  <div class="deliv-pill">Summary & Method sheet</div>
+                </div>
+
+                <div class="result-alert">
+                  <strong>Privacy Note:</strong> Built from a client brief. Contact details are masked in portfolio previews to protect privacy.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>SUMMARY & METHOD CRITERIA</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=900" alt="Research Criteria and Method Sheet">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>THE LEADS LIST (Masked Data Preview)</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=900" alt="Structured Lead List with Verification">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 (Slides 12-13) -->
+        <article class="project-card" data-category="data-cleaning web-research">
+          <div class="project-header-bar">
+            <h3>Project 5: US City Research & Data Cleaning</h3>
+            <div class="project-tags">
+              <span class="tag-service">Data Cleaning</span>
+              <span class="tag-service">Web Research</span>
+              <span class="tag-tools">Google Sheets | Excel</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>Researched and verified city names in a 100-record dataset, standardized valid US cities, and excluded fictional locations, preserving raw source data.</p>
+
+                <h4>What I Did</h4>
+                <ul class="project-bullets">
+                  <li>Researched 62 unique city values using official city sites and Wikipedia</li>
+                  <li>Expanded abbreviations (LA, SF, NYC) and corrected typos</li>
+                  <li>Kept ambiguous names (Springfield, Washington) as is, not guessed</li>
+                  <li>Excluded fictional cities (Gotham, Smallville) into a separate sheet</li>
+                </ul>
+
+                <!-- Numeric Metrics (Slide 12) -->
+                <div class="metric-row">
+                  <div class="metric-box"><div class="num">100</div><div class="lbl">Records</div></div>
+                  <div class="metric-box"><div class="num">62</div><div class="lbl">Unique Cities</div></div>
+                  <div class="metric-box"><div class="num">95</div><div class="lbl">Clean Records</div></div>
+                  <div class="metric-box"><div class="num">5</div><div class="lbl">Excluded</div></div>
+                </div>
+
+                <div class="result-alert" style="margin-top: 15px;">
+                  <strong>Result:</strong> A clean US city dataset where every single decision has a verifiable source link.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>CITY RESEARCH: SOURCE FOR EVERY ROW</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=900" alt="City Research with Sources">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>BEFORE vs AFTER (Abbreviations Expanded)</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=900" alt="Raw vs Clean City Data">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 6 (Slides 14-16) -->
+        <article class="project-card" data-category="web-research data-cleaning">
+          <div class="project-header-bar">
+            <h3>Project 6: Website & Company Research</h3>
+            <div class="project-tags">
+              <span class="tag-service">Web Research & Lead List</span>
+              <span class="tag-service">Data Cleaning</span>
+              <span class="tag-tools">Web Search | LinkedIn | Google Sheets</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-grid">
+              <div class="project-details">
+                <h4>Objective</h4>
+                <p>Researched 50 company domains: checked if each site was active, redirected, or offline, then gathered official company name, address, phone, and Founder/CEO via LinkedIn.</p>
+
+                <h4>Workflow Stages</h4>
+                <div class="workflow-steps">
+                  <span class="wf-step">1. Raw Data</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">2. Web Research</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">3. Data Process</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">4. Clean Data</span> <span class="wf-arrow">→</span>
+                  <span class="wf-step">5. Quality Check</span>
+                </div>
+
+                <!-- Numeric Metrics (Slide 14) -->
+                <div class="metric-row">
+                  <div class="metric-box"><div class="num">46</div><div class="lbl">Unique Domains</div></div>
+                  <div class="metric-box"><div class="num">34</div><div class="lbl">Active</div></div>
+                  <div class="metric-box"><div class="num">9</div><div class="lbl">Redirect</div></div>
+                  <div class="metric-box"><div class="num">3</div><div class="lbl">Offline</div></div>
+                </div>
+
+                <div class="result-alert" style="margin-top: 15px;">
+                  <strong>Deliverables:</strong> 34 verified active companies, change log with 36 entries, and 12 flagged items for client review.
+                </div>
+              </div>
+
+              <!-- Real Evidence Screenshots -->
+              <div class="project-evidence">
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>BEFORE vs AFTER (Domains Only to Full Profiles)</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900" alt="Researched Company Profiles">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+
+                <div class="evidence-item">
+                  <div class="evidence-header">
+                    <span>CHANGE LOG & FLAGGED QUESTIONS</span>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  </div>
+                  <div class="evidence-img-container" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900" alt="Change Log Documentation">
+                    <span class="img-zoom-hint">Click to Zoom Evidence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Hire Me Section (Slide 17) -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="badge">G E T &nbsp; I N &nbsp; T O U C H</span>
+        <h2>Let's Work Together</h2>
+        <p>I'd be happy to help keep your business data accurate, organized, and ready to use.</p>
+        
+        <p><strong>I can help with:</strong></p>
+        <div class="hire-chips">
+          <span class="hire-chip">Data Entry</span>
+          <span class="hire-chip">Data Cleaning</span>
+          <span class="hire-chip">Excel & Google Sheets</span>
+          <span class="hire-chip">Inventory Management</span>
+          <span class="hire-chip">Admin Support</span>
+          <span class="hire-chip">Web Research & Lead List</span>
+        </div>
+      </div>
+
+      <!-- Links & Platforms -->
+      <div class="contact-links-list">
+        <a href="mailto:tiyangandhi.bisnis@gmail.com" class="contact-link-card">
+          <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-text-box">
+            <div class="title">Email Address</div>
+            <div class="val">tiyangandhi.bisnis@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank" class="contact-link-card">
+          <div class="contact-icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="contact-text-box">
+            <div class="title">LinkedIn Profile</div>
+            <div class="val">Connect on LinkedIn</div>
+          </div>
+        </a>
+
+        <a href="https://upwork.com" target="_blank" class="contact-link-card">
+          <div class="contact-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="contact-text-box">
+            <div class="title">Hire via Freelance Platform</div>
+            <div class="val">Upwork Profile</div>
+          </div>
+        </a>
+
+        <a href="https://freelancer.com" target="_blank" class="contact-link-card">
+          <div class="contact-icon-box"><i class="fa-solid fa-globe"></i></div>
+          <div class="contact-text-box">
+            <div class="title">Freelancer.com</div>
+            <div class="val">Freelancer Profile</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Tiyan Gandhi Manara &bull; Data Entry | Admin Support | Web Research & Lead List Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Popup Modal for Real Screenshots -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+    <img src="" alt="Evidence Fullscreen" class="lightbox-content" id="lightboxImg">
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Filter Interactive Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+        filterProjects(filterValue);
+      });
+    });
+
+    function filterProjects(filterValue) {
+      projectCards.forEach(card => {
+        const categories = card.getAttribute('data-category').split(' ');
+        if (filterValue === 'all' || categories.includes(filterValue)) {
+          card.style.display = 'block';
+          setTimeout(() => card.style.opacity = '1', 50);
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    }
+
+    // Helper triggered from Services Cards
+    function applyFilter(category) {
+      filterButtons.forEach(b => {
+        if (b.getAttribute('data-filter') === category) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+      filterProjects(category);
+    }
+
+    // 2. Lightbox Zoom functionality for Evidence Screenshots
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+
+    function openLightbox(container) {
+      const img = container.querySelector('img');
+      modalImg.src = img.src;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // stop page scroll
+    }
+
+    function closeLightbox(e) {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // resume scroll
+      }
+    }
+  </script>
+</body>
+</html>
