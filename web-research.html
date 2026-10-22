@@ -3,283 +3,687 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Research & Lead List Building | Tiyan Gandhi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Web Research & Lead List Building | Tiyan Gandhi Manara</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-body: #f4f7f6;
+      --primary-dark: #0f3830;
+      --teal-card-header: #13463c;
+      --accent-amber: #e5a84b;
+      --mint-pill: #d6eee7;
+      --mint-text: #0e4438;
+      --text-dark: #1b2e2b;
+      --text-muted: #4e635f;
+      --border-card: #d9e6e2;
+      --radius-card: 20px;
+      --shadow-card: 0 10px 30px rgba(15, 56, 48, 0.07);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background-color: var(--primary-dark);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+    .brand-title span { color: var(--accent-amber); }
+    .btn-back-hub {
+      color: #cbdcd7; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px; transition: 0.2s;
+    }
+    .btn-back-hub:hover { color: var(--accent-amber); }
+
+    .service-banner {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 50px 0 60px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-bottom: 45px;
+    }
+    .service-tag {
+      color: var(--accent-amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.82rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .service-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+    .service-banner p { color: #cbdcd7; font-size: 1.1rem; max-width: 750px; }
+
+    .slide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #edf3f1;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+    }
+    .card-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge-amber {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .badge-teal {
+      background: var(--teal-card-header);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .grid-slide-content {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .info-section h4 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .info-section h4:first-child { margin-top: 0; }
+    .info-section p { font-size: 0.95rem; color: var(--text-dark); margin-bottom: 14px; }
+    .bullet-list { list-style: none; margin-bottom: 22px; }
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+    .bullet-list li::before {
+      content: "•";
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      position: absolute;
+      left: 2px;
+      top: -6px;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+    .deliv-pill {
+      background: var(--mint-pill);
+      color: var(--mint-text);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-alert {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 3px solid var(--accent-amber);
+      padding-left: 12px;
+      margin-top: 15px;
+    }
+
+    .visual-stack { display: flex; flex-direction: column; gap: 20px; }
+    .visual-box {
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .visual-header {
+      background: var(--teal-card-header);
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .img-wrap {
+      cursor: zoom-in;
+      position: relative;
+      background: #f7faf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .img-wrap:hover img { transform: scale(1.02); }
+    .zoom-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 56, 48, 0.8);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* Before & After */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .ba-column h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teal-card-header);
+      margin-bottom: 8px;
+    }
+    .ba-column p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      min-height: 44px;
+    }
+    .ba-img-card {
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 15px;
+      padding-top: 25px;
+      border-top: 1px solid #edf3f1;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f9fbfb;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+    }
+    .highlight-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-card-header);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .highlight-item span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+
+    /* Numbers Strip (Slide 14) */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .stat-pill {
+      background: #f4f8f7;
+      border: 1px solid var(--border-card);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat-pill .val {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--teal-card-header);
+      line-height: 1;
+    }
+    .stat-pill .lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Workflow Horizontal Strip */
+    .workflow-strip {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 12px 0 20px;
+    }
+    .wf-pill {
+      background: var(--teal-card-header);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+    .wf-arrow { color: var(--accent-amber); font-weight: bold; }
+
+    .hire-box {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 40px;
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+    .hire-box h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+    .hire-box p { color: #cbdcd7; margin-bottom: 24px; }
+    .btn-email {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 36, 30, 0.94);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .lightbox-modal.active { display: flex; }
+    .lightbox-modal img {
+      max-width: 95%; max-height: 90vh;
+      border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 25px;
+      color: #fff; font-size: 2rem; background: none; border: none; cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .slide-card { padding: 24px 20px; }
+      .card-title { font-size: 1.5rem; }
+      .service-banner h1 { font-size: 2rem; }
+      .grid-slide-content { grid-template-columns: 1fr; gap: 28px; }
+      .before-after-grid { grid-template-columns: 1fr; }
+      .ba-column p { min-height: auto; }
+      .highlight-row { grid-template-columns: 1fr; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo"><i class="fa-solid fa-table-cells"></i> <span>Tiyan</span> Gandhi</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="data-entry.html">Data Entry</a></li>
-        <li><a href="admin-support.html">Admin Support</a></li>
-        <li><a href="web-research.html" class="active">Web Research</a></li>
-      </ul>
-      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-nav-contact">Contact Me</a>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-title">Tiyan Gandhi <span>Portofolio</span></a>
+      <a href="index.html" class="btn-back-hub"><i class="fa-solid fa-arrow-left"></i> Kembali ke Menu Utama</a>
     </div>
   </header>
 
-  <section class="page-banner">
+  <section class="service-banner">
     <div class="container">
-      <span class="banner-badge">SPECIALIZED SERVICE PORTFOLIO</span>
+      <span class="service-tag">Specialized Service Portfolio</span>
       <h1>Web Research & Lead List Building</h1>
-      <p>Targeted B2B company research, decision-maker identification via LinkedIn, and verified contact lists with documented source status.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Web Research & Lead Lists</span>
-      </div>
+      <p>Precision prospect research, identifying key decision-makers via LinkedIn and public registries, and building structured lead lists with source verification status.</p>
     </div>
   </section>
 
-  <main class="dedicated-content">
-    <div class="container">
+  <main class="container">
 
-      <!-- ================= PROJECT 4 (SLIDES 10 & 11) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 4: Web Research & Lead List Building</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Web Research & Lead List</span>
-            <span class="tag-tool">Tools: Google Operators | LinkedIn | Apollo | Excel</span>
-          </div>
+    <!-- ===================================================================
+         PROJECT 4 - CARD 1 (SLIDE 10: B2B LEAD GENERATION BRIEF)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 4: Web Research & Lead List Building</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Web Research & Lead List</span>
+          <span class="badge-teal">Portfolio Project</span>
         </div>
-
-        <!-- Part 1: Brief & Methodology (Slide 10) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-file-lines"></i> Part 1: Client Brief & Research Workflow <span>Slide 10</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Context</h4>
-              <p><strong>B2B Company Research & Lead List — Indonesia Meat Industry.</strong> Built around a simulated client brief to research potential B2B buyers in Indonesia’s beef and buffalo meat industry.</p>
-
-              <h4>Research Workflow</h4>
-              <ul class="project-bullets">
-                <li>Searched with Google operators and checked each website.</li>
-                <li>Identified potential decision-makers from company websites and LinkedIn, where publicly available.</li>
-                <li>Recorded publicly available business contact details and documented email-check status where checked.</li>
-                <li>Standardized data, removed duplicates, reviewed every row.</li>
-              </ul>
-
-              <h4>Deliverables</h4>
-              <div class="deliv-grid">
-                <div class="deliv-item">Company list with contact fields</div>
-                <div class="deliv-item">Email-check status for contacts</div>
-                <div class="deliv-item">Summary & Method sheet</div>
-              </div>
-
-              <div class="result-box">
-                *Built from a simulated client brief. Personal contact details are masked in all screenshots to protect privacy.
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 10 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>SUMMARY & METHOD | Brief, criteria, and method</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Summary Method Slide 10 -->
-                  <img src="images/project4-summary-method.png" alt="Summary and Method Slide 10" onerror="this.src='https://placehold.co/800x450/19584d/ffffff?text=Screenshot+Brief+%26+Method+(Slide+10)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: The Lead List (Slide 11) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-table-list"></i> Part 2: The Generated Lead List <span>Slide 11</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Deliverable Specifications</h4>
-              <ul class="project-bullets">
-                <li>Company, contact, and email status structured in one clean sheet.</li>
-                <li>Standardized city and province formatting.</li>
-                <li>Personal details masked in portfolio view to protect privacy.</li>
-                <li>Includes official website, verified phone numbers, LinkedIn URL, and company address.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 11 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>THE LEAD LIST | Structured data preview</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Lead List Slide 11 -->
-                  <img src="images/project4-lead-list.png" alt="Lead List Slide 11" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+The+Lead+List+(Slide+11)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ================= PROJECT 6 (SLIDES 14, 15, & 16) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 6: Website & Company Research</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Web Research & Data Cleaning</span>
-            <span class="tag-tool">Tools: Google Sheets | Web Search | LinkedIn</span>
-          </div>
-        </div>
-
-        <!-- Part 1: Scope & Metrics (Slide 14) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-file-lines"></i> Part 1: Scope & Results in Numbers <span>Slide 14</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Objective</h4>
-              <p>Researched 50 company domains: checked whether each website is active, redirected, or offline, then found the current company name, address, phone, and Founder / CEO with LinkedIn.</p>
-
-              <h4>What I Did</h4>
-              <ul class="project-bullets">
-                <li>Removed 4 duplicate domains (50 records down to 46).</li>
-                <li>Sorted every website as Active, Redirect, or Offline.</li>
-                <li>Researched company name, address, phone, Founder / CEO, LinkedIn.</li>
-                <li>Flagged unclear items for the client instead of guessing.</li>
-              </ul>
-
-              <h4>Results in Numbers</h4>
-              <div class="metric-row">
-                <div class="metric-box"><div class="num">46</div><div class="lbl">Unique Domains</div></div>
-                <div class="metric-box"><div class="num">34</div><div class="lbl">Active</div></div>
-                <div class="metric-box"><div class="num">9</div><div class="lbl">Redirect</div></div>
-                <div class="metric-box"><div class="num">3</div><div class="lbl">Offline</div></div>
-              </div>
-
-              <h4>Deliverables</h4>
-              <div class="deliv-grid">
-                <div class="deliv-item">Clean Data (34 active)</div>
-                <div class="deliv-item">Redirect (9) & Offline (3)</div>
-                <div class="deliv-item">Change Log (36 changes)</div>
-                <div class="deliv-item">Flagged Items (12 items)</div>
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 14 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>CLEAN DATA | Researched details summary</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Clean Data Slide 14 -->
-                  <img src="images/project6-clean-data.png" alt="Clean Data Slide 14" onerror="this.src='https://placehold.co/800x450/19584d/ffffff?text=Screenshot+Researched+Details+(Slide+14)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: Before & After (Slide 15) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-code-compare"></i> Part 2: Before & After Demonstration <span>Slide 15</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Transformation Summary</h4>
-              <ul class="project-bullets">
-                <li><strong>BEFORE:</strong> 50 raw records with domain names only. Just 2 had partial details, and some domains appeared twice.</li>
-                <li><strong>AFTER:</strong> 34 active domains enriched with official name, address, phone, Founder / CEO, and LinkedIn. Redirect and offline domains have their own separate sheets.</li>
-              </ul>
-              <h4>Quality Checks Applied</h4>
-              <ul class="project-bullets">
-                <li>4 duplicate domains removed.</li>
-                <li>Active, redirect, and offline sorted.</li>
-                <li>12 unclear items flagged, not guessed.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 15 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>BEFORE (Raw Domains) vs AFTER (Clean Researched Data)</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Before After Slide 15 -->
-                  <img src="images/project6-before-after.png" alt="Before After Slide 15" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+Before+vs+After+(Slide+15)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 3: Research Workflow & Change Log (Slide 16) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-list-check"></i> Part 3: 5-Stage Research Workflow & Quality Check <span>Slide 16</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Workflow Steps</h4>
-              <div class="workflow-row">
-                <span class="wf-step">1. Raw Data</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">2. Web Research</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">3. Data Process</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">4. Clean Data</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">5. Quality Check</span>
-              </div>
-              <ul class="project-bullets" style="margin-top: 15px;">
-                <li>Documented every single decision with full transparency.</li>
-                <li>Change log tracking 36 detailed corrections.</li>
-                <li>12 flagged questions prepared for client review.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 16 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>CHANGE LOG & FLAGGED ITEMS | Questions for the client</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Change Log Slide 16 -->
-                  <img src="images/project6-changelog-flagged.png" alt="Change Log Slide 16" onerror="this.src='https://placehold.co/800x450/19584d/ffffff?text=Screenshot+Change+Log+%26+Flagged+(Slide+16)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="subpage-cta">
-        <h3>Looking for Accurate B2B Leads or Web Research?</h3>
-        <p>I can help build tailored prospect lists and verify business contacts for your sales team.</p>
-        <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-hire"><i class="fa-solid fa-envelope"></i> Hire Me for Web Research</a>
       </div>
 
+      <div class="grid-slide-content">
+        <div class="info-section">
+          <h4>B2B Company Research & Lead List — Indonesia Meat Industry</h4>
+          <p>Built around a simulated client brief to research potential B2B buyers in Indonesia’s beef and buffalo meat industry.</p>
+
+          <h4>Research Workflow</h4>
+          <ul class="bullet-list">
+            <li>Searched with Google operators and checked each website.</li>
+            <li>Identified potential decision-makers from company websites and LinkedIn, where publicly available.</li>
+            <li>Recorded publicly available business contact details and documented email-check status where checked.</li>
+            <li>Standardized data, removed duplicates, reviewed every row.</li>
+          </ul>
+
+          <h4>Deliverables</h4>
+          <div class="deliverables-grid">
+            <div class="deliv-pill">Company list with contact fields where publicly available</div>
+            <div class="deliv-pill">Email-check status for contacts checked</div>
+            <div class="deliv-pill" style="grid-column: span 2;">Summary & Method sheet</div>
+          </div>
+
+          <p style="font-size: 0.88rem; font-weight: 700; color: var(--primary-dark); margin-top: 15px;">
+            Tools: Google search operators, LinkedIn, Apollo, Excel & Google Sheets
+          </p>
+
+          <div class="result-alert">
+            Built from a simulated client brief. Personal contact details are masked in all screenshots.
+          </div>
+        </div>
+
+        <div class="visual-stack">
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>SUMMARY & METHOD | Brief, criteria, and method</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p4-summary.png -->
+              <img src="images/p4-summary.png" alt="Summary and Method Slide 10" onerror="this.src='https://placehold.co/900x550/13463c/ffffff?text=Screenshot+Brief+%26+Method+(Slide+10)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 4 - CARD 2 (SLIDE 11: THE LEAD LIST VIEW)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 4: The Lead List</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Data Deliverable</span>
+        </div>
+      </div>
+
+      <!-- 3 Poin Highlight di Atas Gambar (Slide 11) -->
+      <div class="highlight-row" style="margin-top: 0; padding-top: 0; border-top: none; margin-bottom: 24px;">
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-address-book"></i></div>
+          <span>Company, contact, and email status in one sheet</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <span>Standardized city and province</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <span>Personal details masked</span>
+        </div>
+      </div>
+
+      <!-- Gambar Lebar Lead List (Slide 11) -->
+      <div class="visual-box">
+        <div class="visual-header">
+          <span>THE LEAD LIST | Portfolio view (personal contact details masked)</span>
+          <i class="fa-solid fa-expand"></i>
+        </div>
+        <div class="img-wrap" onclick="openZoom(this)" style="min-height: 280px;">
+          <!-- GANTI GAMBAR: images/p4-leadlist.png -->
+          <img src="images/p4-leadlist.png" alt="The Lead List Sheet Slide 11" onerror="this.src='https://placehold.co/1100x450/0f342c/ffffff?text=Screenshot+The+Lead+List+Sheet+(Slide+11)'">
+          <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: #78908a; font-style: italic; margin-top: 10px;">Contact details are masked in this portfolio view to protect privacy.</p>
+    </article>
+
+
+    <!-- ===================================================================
+         PROJECT 6 - CARD 1 (SLIDE 14: DOMAIN RESEARCH & NUMBERS)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 6: Website & Company Research</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Web Research & Data Cleaning</span>
+          <span class="badge-teal">Tools: Google Sheets | Web Search</span>
+        </div>
+      </div>
+
+      <div class="grid-slide-content">
+        <div class="info-section">
+          <h4>Objective</h4>
+          <p>Researched 50 company domains: checked whether each website is active, redirected, or offline, then found the current company name, address, phone, and Founder / CEO with LinkedIn.</p>
+
+          <h4>What I Did</h4>
+          <ul class="bullet-list">
+            <li>Removed 4 duplicate domains (50 records down to 46).</li>
+            <li>Sorted every website as Active, Redirect, or Offline.</li>
+            <li>Researched company name, address, phone, Founder / CEO, LinkedIn.</li>
+            <li>Flagged unclear items for the client instead of guessing.</li>
+          </ul>
+
+          <h4>Deliverables</h4>
+          <div class="deliverables-grid">
+            <div class="deliv-pill">Clean Data sheet (34 active domains)</div>
+            <div class="deliv-pill">Redirect (9) and Offline (3) sheets</div>
+            <div class="deliv-pill">Change Log of every change (36)</div>
+            <div class="deliv-pill">Flagged Items for the client (12)</div>
+          </div>
+
+          <div class="result-alert">
+            Result: A verified company list with every change documented.
+          </div>
+        </div>
+
+        <div class="visual-stack">
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>CLEAN DATA | Researched details</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p6-clean-data.png -->
+              <img src="images/p6-clean-data.png" alt="Researched Details Slide 14" onerror="this.src='https://placehold.co/900x420/13463c/ffffff?text=Screenshot+Researched+Details+(Slide+14)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+
+          <!-- SUMMARY | Results in numbers (Slide 14) -->
+          <div style="background: #ffffff; border: 1px solid var(--border-card); border-radius: 14px; padding: 16px 20px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--teal-card-header); letter-spacing: 0.5px;">SUMMARY | Results in numbers</span>
+            <div class="stats-strip">
+              <div class="stat-pill"><div class="val">46</div><div class="lbl">Unique domains</div></div>
+              <div class="stat-pill"><div class="val">34</div><div class="lbl">Active</div></div>
+              <div class="stat-pill"><div class="val">9</div><div class="lbl">Redirect</div></div>
+              <div class="stat-pill"><div class="val">3</div><div class="lbl">Offline</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 6 - CARD 2 (SLIDE 15: BEFORE & AFTER ENRICHMENT)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 6: Before & After</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Comparison View</span>
+        </div>
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-column">
+          <h4>BEFORE | Raw Data: domains only</h4>
+          <p>50 raw records with domain names only. Just 2 had partial details, and some domains appeared twice.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p6-before.png -->
+              <img src="images/p6-before.png" alt="Raw Domains Slide 15" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+BEFORE+Domains+(Slide+15)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-column">
+          <h4>AFTER | Clean Data: researched</h4>
+          <p>34 active domains with official name, address, phone, Founder / CEO, and LinkedIn. Redirect and offline domains have their own sheets.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p6-after.png -->
+              <img src="images/p6-after.png" alt="Clean Researched Data Slide 15" onerror="this.src='https://placehold.co/800x450/13463c/ffffff?text=Screenshot+AFTER+Enriched+Profiles+(Slide+15)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-row">
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-clone"></i></div>
+          <span>4 duplicate domains removed</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <span>Active, redirect, and offline sorted</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-flag"></i></div>
+          <span>12 unclear items flagged, not guessed</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 6 - CARD 3 (SLIDE 16: WORKFLOW & CHANGE LOG)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 6: Research Workflow</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Audit Quality Check</span>
+        </div>
+      </div>
+
+      <!-- 5 Workflow Steps (Slide 16) -->
+      <div class="workflow-strip" style="margin-bottom: 24px;">
+        <span class="wf-pill">1. Raw Data (50 domains)</span> <span class="wf-arrow">→</span>
+        <span class="wf-pill">2. Website Research (Active/Redirect/Offline)</span> <span class="wf-arrow">→</span>
+        <span class="wf-pill">3. Data Process (Contact, CEO, LinkedIn)</span> <span class="wf-arrow">→</span>
+        <span class="wf-pill">4. Clean Data (34 active + split sheets)</span> <span class="wf-arrow">→</span>
+        <span class="wf-pill">5. Quality Check (Change Log 36, Flagged 12)</span>
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-column">
+          <h4>CHANGE LOG | Every change documented</h4>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p6-changelog.png -->
+              <img src="images/p6-changelog.png" alt="Change Log Slide 16" onerror="this.src='https://placehold.co/800x420/13463c/ffffff?text=Screenshot+Change+Log+(Slide+16)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-column">
+          <h4>FLAGGED ITEMS | Questions for the client</h4>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p6-flagged.png -->
+              <img src="images/p6-flagged.png" alt="Flagged Items Slide 16" onerror="this.src='https://placehold.co/800x420/13463c/ffffff?text=Screenshot+Flagged+Items+(Slide+16)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="hire-box">
+      <h3>Need Verified B2B Leads or Web Research?</h3>
+      <p>I can help find decision-makers, verify business contact info, and build custom company databases.</p>
+      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-email"><i class="fa-solid fa-envelope"></i> Hire Me for Web Research</a>
     </div>
+
   </main>
 
-  <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close">&times;</button><img id="lightbox-img" src=""></div>
+  <div class="lightbox-modal" id="zoomModal" onclick="closeZoom()">
+    <button class="lightbox-close">&times;</button>
+    <img id="zoomImg" src="">
+  </div>
+
   <script>
-    function openLightbox(el){ document.getElementById('lightbox-img').src = el.querySelector('img').src; document.getElementById('lightbox').classList.add('active'); }
-    function closeLightbox(){ document.getElementById('lightbox').classList.remove('active'); }
+    function openZoom(el) {
+      document.getElementById('zoomImg').src = el.querySelector('img').src;
+      document.getElementById('zoomModal').classList.add('active');
+    }
+    function closeZoom() {
+      document.getElementById('zoomModal').classList.remove('active');
+    }
   </script>
 </body>
 </html>
