@@ -3,107 +3,703 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiyan Gandhi Manara | Data Specialist Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tiyan Gandhi Manara | Data Entry, Admin Support & Web Research Specialist</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    .hero { background: var(--primary-dark); color: #fff; padding: 80px 0 100px; }
-    .hero-grid { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 40px; align-items: center; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; line-height: 1.2; margin: 15px 0; }
-    .hero-sub { color: var(--accent-amber); font-size: 1.1rem; font-style: italic; margin-bottom: 30px; }
-    .hero-avatar { width: 290px; height: 290px; border-radius: 50%; border: 5px solid var(--accent-amber); object-fit: cover; }
-    .services-main { padding: 90px 0; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-    .service-hub-card {
-      background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px 26px;
-      display: flex; flex-direction: column; transition: var(--transition); box-shadow: var(--shadow-sm);
+    :root {
+      --bg-body: #f4f7f6;
+      --primary-dark: #0f3830;
+      --teal-card-header: #13463c;
+      --accent-amber: #e5a84b;
+      --accent-hover: #d29437;
+      --mint-pill: #d6eee7;
+      --mint-text: #0e4438;
+      --text-dark: #1b2e2b;
+      --text-muted: #4e635f;
+      --border-card: #d9e6e2;
+      --radius-card: 20px;
+      --shadow-card: 0 10px 30px rgba(15, 56, 48, 0.07);
+      --transition: all 0.25s ease;
     }
-    .service-hub-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary-teal); }
-    .icon-box { width: 60px; height: 60px; background: var(--primary-teal); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; }
-    .service-hub-card h3 { font-size: 1.35rem; color: var(--primary-dark); margin-bottom: 12px; }
-    .service-hub-card p { font-size: 0.95rem; color: var(--text-muted); flex-grow: 1; margin-bottom: 24px; }
-    .btn-view-service {
-      background: var(--primary-teal); color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 30px;
-      font-size: 0.9rem; font-weight: 700; text-align: center; display: flex; justify-content: space-between; align-items: center; transition: var(--transition);
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header Nav */
+    header {
+      background-color: var(--primary-dark);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .btn-view-service:hover { background: var(--accent-amber); color: var(--primary-dark); }
-    @media(max-width: 900px){ .hero-grid, .services-grid { grid-template-columns: 1fr; } }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+    .brand-title span { color: var(--accent-amber); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #cbdcd7; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent-amber); }
+    .btn-hire-nav {
+      background: var(--accent-amber); color: var(--primary-dark);
+      padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 0.85rem;
+      text-decoration: none; transition: var(--transition);
+    }
+    .btn-hire-nav:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    /* ========================================================
+       SLIDE 1: HERO SECTION
+       ======================================================== */
+    .hero {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 70px 0 90px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-bottom: 50px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-badge {
+      color: var(--accent-amber);
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .hero-role {
+      font-size: 1.1rem;
+      color: #e0eae7;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .hero-tagline {
+      color: var(--accent-amber);
+      font-size: 1.15rem;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-hero-primary {
+      background: var(--accent-amber); color: var(--primary-dark);
+      padding: 13px 28px; border-radius: 30px; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition);
+    }
+    .btn-hero-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-hero-secondary {
+      background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2);
+      padding: 13px 26px; border-radius: 30px; font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition);
+    }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+
+    .hero-avatar-wrap { text-align: center; }
+    .hero-avatar {
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      border: 6px solid var(--accent-amber);
+      object-fit: cover;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+
+    /* Common Big Card Style */
+    .slide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 40px;
+      margin-bottom: 45px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 26px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #edf3f1;
+    }
+
+    /* ========================================================
+       SLIDE 2: ABOUT ME & PERSONAL SKILLS
+       ======================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .who-i-am h3 {
+      font-size: 1.3rem;
+      color: var(--teal-card-header);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .who-i-am p {
+      font-size: 0.98rem;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .exp-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--border-card);
+    }
+    .exp-num {
+      font-size: 3.4rem;
+      font-weight: 800;
+      color: var(--teal-card-header);
+      line-height: 1;
+    }
+    .exp-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .personal-skills-col h3 {
+      font-size: 1.3rem;
+      color: var(--teal-card-header);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .skill-items-list { display: flex; flex-direction: column; gap: 14px; }
+    .skill-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f8faf9;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+    }
+    .skill-icon-circle {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-card-header);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .skill-details h4 {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .skill-details p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ========================================================
+       SLIDE 3: SERVICES & TOOLS
+       ======================================================== */
+    .services-3-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .service-box {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      transition: var(--transition);
+    }
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--teal-card-header);
+    }
+    .service-box-icon {
+      width: 58px;
+      height: 58px;
+      background: var(--teal-card-header);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .service-box h3 {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .service-bullet-list { list-style: none; margin-bottom: 24px; flex-grow: 1; }
+    .service-bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .service-bullet-list li::before {
+      content: "•";
+      color: var(--teal-card-header);
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+      top: -6px;
+    }
+    .btn-service-link {
+      background: var(--teal-card-header);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .btn-service-link:hover {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+    }
+
+    /* Tools I Use Strip (Slide 3 Bottom) */
+    .tools-bar {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: 40px;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .tools-label { font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .tools-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tool-badge {
+      background: var(--teal-card-header);
+      color: #fff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+
+    /* ========================================================
+       SLIDE 17: GET IN TOUCH / CONTACT
+       ======================================================== */
+    .contact-card {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 50px 45px;
+      margin-bottom: 40px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .contact-left .badge {
+      color: var(--accent-amber);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .contact-left p { color: #cbdcd7; font-size: 1.05rem; margin-bottom: 24px; }
+    .contact-profile-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 22px;
+    }
+    .contact-profile-box h4 { font-size: 1.15rem; color: #fff; margin-bottom: 4px; }
+    .contact-profile-box span { font-size: 0.88rem; color: #9cb5ae; }
+
+    .help-chips-wrap { margin-top: 15px; }
+    .help-chips-wrap p { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .help-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .help-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: #e0eae7;
+    }
+
+    /* Contact Links (All target="_blank") */
+    .contact-cards-stack { display: flex; flex-direction: column; gap: 14px; }
+    .contact-btn-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: #fff;
+      transition: var(--transition);
+    }
+    .contact-btn-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-amber);
+      transform: translateX(6px);
+    }
+    .contact-icon-wrap {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .contact-text-wrap .lbl {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: #9cb5ae;
+      letter-spacing: 0.5px;
+    }
+    .contact-text-wrap .val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #09211c;
+      color: #79958e;
+      text-align: center;
+      padding: 22px;
+      font-size: 0.85rem;
+    }
+
+    /* ========================================================
+       RESPONSIVE PENYESUAIAN HP (SMARTPHONE)
+       ======================================================== */
+    @media (max-width: 860px) {
+      .hero-grid, .about-grid, .services-3-col, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .slide-card { padding: 26px 20px; }
+      .hero { padding: 45px 0 60px; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero-avatar { width: 220px; height: 220px; }
+      .nav-links { display: none; }
+      .tools-bar { flex-direction: column; align-items: flex-start; }
+      .contact-card { padding: 32px 20px; }
+      .contact-left h2 { font-size: 2.2rem; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Navigation -->
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo"><i class="fa-solid fa-table-cells"></i> <span>Tiyan</span> Gandhi</a>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-title">Tiyan Gandhi <span>Portfolio</span></a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="data-entry.html">Data Entry</a></li>
         <li><a href="admin-support.html">Admin Support</a></li>
         <li><a href="web-research.html">Web Research</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-nav-contact">Email Me</a>
+      <a href="#contact" class="btn-hire-nav">Get in Touch</a>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- ========================================================
+       SLIDE 1: HERO SECTION
+       ======================================================== -->
+  <section class="hero" id="home">
     <div class="container hero-grid">
-      <div>
-        <span style="color: var(--accent-amber); font-weight: 700; letter-spacing: 2px;">PORTFOLIO</span>
+      <div class="hero-left">
+        <span class="hero-badge">P O R T F O L I O</span>
         <h1>Tiyan Gandhi Manara</h1>
-        <p style="color: #cbdcd7; font-size: 1.1rem; margin-bottom: 10px;">Data Entry | Admin Support | Web Research & Lead Lists | Excel & Google Sheets</p>
-        <p class="hero-sub">"Clean, organized, and reliable data you can use right away"</p>
-        <p style="color: #e0eae7; max-width: 540px;">15+ years experience turning messy records into structured datasets and automated dashboards.</p>
+        <p class="hero-role">Data Entry | Admin Support | Web Research & Lead Lists | Excel & Google Sheets</p>
+        <p class="hero-tagline">"Clean, organized, and reliable data you can use right away"</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-hero-primary"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+          <a href="#contact" class="btn-hero-secondary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        </div>
       </div>
-      <div style="text-align: center;">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Tiyan Gandhi" class="hero-avatar">
+      <div class="hero-avatar-wrap">
+        <!-- REPLACE WITH YOUR HEADSHOT: images/tiyan-profile.png -->
+        <img src="images/tiyan-profile.png" alt="Tiyan Gandhi Manara" class="hero-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600'">
       </div>
     </div>
   </section>
 
-  <!-- 3 Hub Services (Menghubungkan ke 3 link berbeda) -->
-  <section class="services-main">
-    <div class="container">
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary-dark);">Services Offered</h2>
-        <p style="color: var(--text-muted); margin-top: 8px;">Pilih salah satu spesialisasi di bawah untuk melihat detail project dan bukti hasil kerja nyatanya.</p>
-      </div>
+  <main class="container">
 
-      <div class="services-grid">
-        <!-- Service 1 Card -->
-        <div class="service-hub-card">
-          <div class="icon-box"><i class="fa-solid fa-keyboard"></i></div>
-          <h3>Data Entry & Cleaning</h3>
-          <p>Standardisasi format, pembersihan data berantakan, deduplikasi, dan pembuatan change log terperinci.</p>
-          <a href="data-entry.html" class="btn-view-service">
-            <span>Buka Portofolio Data Entry</span> <i class="fa-solid fa-arrow-right"></i>
+    <!-- ========================================================
+         SLIDE 2: ABOUT ME & PERSONAL SKILLS
+         ======================================================== -->
+    <section class="slide-card" id="about">
+      <h2 class="section-title">About Me & Skills</h2>
+      <div class="about-grid">
+        
+        <!-- Left: Who I Am -->
+        <div class="who-i-am">
+          <h3>Who I Am</h3>
+          <p>Data entry and administrative support specialist with 15+ years in administration, procurement, credit analysis, and operations across finance, distribution, and startup teams.</p>
+          <p>I turn messy records into clean, accurate spreadsheets and build Excel and Google Sheets reports and dashboards.</p>
+          <p>I follow instructions closely and check my work before delivery, so you get reliable, well-organized data on time.</p>
+
+          <div class="exp-box">
+            <div class="exp-num">15+</div>
+            <div class="exp-desc">years across finance, procurement, operations, and early-stage ventures</div>
+          </div>
+        </div>
+
+        <!-- Right: Personal Skills (5 Skills from Slide 2) -->
+        <div class="personal-skills-col">
+          <h3>Personal Skills</h3>
+          <div class="skill-items-list">
+            
+            <div class="skill-row">
+              <div class="skill-icon-circle"><i class="fa-solid fa-eye"></i></div>
+              <div class="skill-details">
+                <h4>Attention to Detail</h4>
+                <p>Records every correction in a change log and flags unclear items instead of guessing.</p>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-circle"><i class="fa-solid fa-folder-tree"></i></div>
+              <div class="skill-details">
+                <h4>Organization</h4>
+                <p>Managed stock and inventory records, vendor contracts, and SOP documentation.</p>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-circle"><i class="fa-regular fa-clock"></i></div>
+              <div class="skill-details">
+                <h4>Time Management</h4>
+                <p>Prepared weekly and monthly Excel reports and handled monthly closing and payroll submissions.</p>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-circle"><i class="fa-solid fa-puzzle-piece"></i></div>
+              <div class="skill-details">
+                <h4>Problem-Solving</h4>
+                <p>Compared vendor costs and built a Google Sheets dashboard for easier fee-data updates.</p>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-circle"><i class="fa-regular fa-comments"></i></div>
+              <div class="skill-details">
+                <h4>Communication</h4>
+                <p>Coordinated with partners and vendors, and supported regional operations across Java, Bali, and Lombok.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 3: SERVICES & TOOLS (DIRECT DEDICATED LINKS)
+         ======================================================== -->
+    <section class="slide-card" id="services">
+      <h2 class="section-title">Services & Tools</h2>
+
+      <div class="services-3-col">
+        <!-- Service 1 -->
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-keyboard"></i></div>
+          <h3>Data Entry & Data Cleaning</h3>
+          <ul class="service-bullet-list">
+            <li>Accurate entry of records in Excel and Google Sheets</li>
+            <li>Cleaning, standardizing, and de-duplicating data</li>
+            <li>Change logs and flagged questions for unclear items</li>
+          </ul>
+          <a href="data-entry.html" class="btn-service-link">
+            <span>View Data Entry Projects</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Service 2 Card -->
-        <div class="service-hub-card">
-          <div class="icon-box"><i class="fa-solid fa-folder-open"></i></div>
+        <!-- Service 2 -->
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-folder-open"></i></div>
           <h3>Admin Support</h3>
-          <p>Manajemen stok, PO, faktur, laporan berkala, dan sistem alur kerja spreadsheet terotomasi.</p>
-          <a href="admin-support.html" class="btn-view-service">
-            <span>Buka Portofolio Admin Support</span> <i class="fa-solid fa-arrow-right"></i>
+          <ul class="service-bullet-list">
+            <li>Stock, PO, invoice, and payment records</li>
+            <li>Weekly and monthly reports, SOP documentation</li>
+            <li>Spreadsheet systems with automated workflows</li>
+          </ul>
+          <a href="admin-support.html" class="btn-service-link">
+            <span>View Admin Support Projects</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Service 3 Card -->
-        <div class="service-hub-card">
-          <div class="icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <h3>Web Research & Leads</h3>
-          <p>Riset calon pembeli B2B, penemuan kontak pengambil keputusan (decision-maker), dan verifikasi email.</p>
-          <a href="web-research.html" class="btn-view-service">
-            <span>Buka Portofolio Web Research</span> <i class="fa-solid fa-arrow-right"></i>
+        <!-- Service 3 -->
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Web Research & Lead List</h3>
+          <ul class="service-bullet-list">
+            <li>Finding companies and decision-makers from public sources</li>
+            <li>Business contact research with source and verification status</li>
+            <li>A structured lead list with source links and verification status</li>
+          </ul>
+          <a href="web-research.html" class="btn-service-link">
+            <span>View Web Research Projects</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
-    </div>
-  </section>
 
+      <!-- Tools I Use Banner -->
+      <div class="tools-bar">
+        <div class="tools-label">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Tools I Use:
+        </div>
+        <div class="tools-badges">
+          <span class="tool-badge"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</span>
+          <span class="tool-badge"><i class="fa-solid fa-table"></i> Google Sheets</span>
+          <span class="tool-badge"><i class="fa-solid fa-magnifying-glass"></i> Google Search Operators</span>
+          <span class="tool-badge"><i class="fa-solid fa-rocket"></i> Apollo.io</span>
+          <span class="tool-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 17: GET IN TOUCH / CONTACT (ALL TARGET="_BLANK")
+         ======================================================== -->
+    <section class="contact-card" id="contact">
+      <div class="contact-grid">
+        
+        <div class="contact-left">
+          <span class="badge">G E T &nbsp; I N &nbsp; T O U C H</span>
+          <h2>Let's Work Together</h2>
+          <p>I'd be happy to help keep your data accurate, organized, and ready to use.</p>
+
+          <div class="contact-profile-box">
+            <h4>Tiyan Gandhi Manara</h4>
+            <span>Data Entry | Admin Support | Web Research & Lead List Building | Excel & Google Sheets</span>
+          </div>
+
+          <div class="help-chips-wrap">
+            <p>I can help with:</p>
+            <div class="help-chips">
+              <span class="help-chip">Data Entry</span>
+              <span class="help-chip">Data Cleaning</span>
+              <span class="help-chip">Excel & Google Sheets</span>
+              <span class="help-chip">Inventory Management</span>
+              <span class="help-chip">Admin Support</span>
+              <span class="help-chip">Web Research & Lead List</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Links to Platforms (Opens in New Tab) -->
+        <div class="contact-cards-stack">
+          <!-- Email Link -->
+          <a href="mailto:tiyangandhi.bisnis@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-btn-card">
+            <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-text-wrap">
+              <div class="lbl">Email</div>
+              <div class="val">tiyangandhi.bisnis@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- LinkedIn Link -->
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-btn-card">
+            <div class="contact-icon-wrap"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-text-wrap">
+              <div class="lbl">LinkedIn</div>
+              <div class="val">View LinkedIn Profile</div>
+            </div>
+          </a>
+
+          <!-- Freelancer Link -->
+          <a href="https://www.freelancer.com" target="_blank" rel="noopener noreferrer" class="contact-btn-card">
+            <div class="contact-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="contact-text-wrap">
+              <div class="lbl">Freelancer</div>
+              <div class="val">Hire on Freelancer.com</div>
+            </div>
+          </a>
+
+          <!-- Upwork Link -->
+          <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer" class="contact-btn-card">
+            <div class="contact-icon-wrap"><i class="fa-brands fa-upwork" style="font-weight: 800;"></i></div>
+            <div class="contact-text-wrap">
+              <div class="lbl">Upwork</div>
+              <div class="val">Hire on Upwork</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <div class="container">&copy; 2026 Tiyan Gandhi Manara &bull; tiyangandhi.bisnis@gmail.com</div>
+    <div class="container">
+      &copy; 2026 Tiyan Gandhi Manara &bull; Data Entry | Admin Support | Web Research & Lead List Portfolio
+    </div>
   </footer>
+
 </body>
 </html>
