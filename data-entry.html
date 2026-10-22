@@ -3,267 +3,690 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Entry & Data Cleaning Portfolio | Tiyan Gandhi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Data Entry & Data Cleaning | Tiyan Gandhi Manara</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-body: #f4f7f6;
+      --primary-dark: #0f3830;
+      --teal-card-header: #13463c;
+      --accent-amber: #e5a84b;
+      --mint-pill: #d6eee7;
+      --mint-text: #0e4438;
+      --text-dark: #1b2e2b;
+      --text-muted: #4e635f;
+      --border-card: #d9e6e2;
+      --radius-card: 20px;
+      --shadow-card: 0 10px 30px rgba(15, 56, 48, 0.07);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top Navigation Bar */
+    header {
+      background-color: var(--primary-dark);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+    .brand-title span { color: var(--accent-amber); }
+    .btn-back-hub {
+      color: #cbdcd7; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px; transition: 0.2s;
+    }
+    .btn-back-hub:hover { color: var(--accent-amber); }
+
+    /* Hero / Banner Khusus Jasa */
+    .service-banner {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 50px 0 60px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-bottom: 45px;
+    }
+    .service-tag {
+      color: var(--accent-amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.82rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .service-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+    .service-banner p {
+      color: #cbdcd7;
+      font-size: 1.1rem;
+      max-width: 750px;
+    }
+
+    /* CARD BESAR MIRIP SLIDE PPT */
+    .slide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+    }
+
+    /* Header di dalam Card */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #edf3f1;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+    }
+    .card-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge-amber {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .badge-teal {
+      background: var(--teal-card-header);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Layout 2 Kolom (Slide 4 & 12) */
+    .grid-slide-content {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .info-section h4 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-top: 16px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .info-section h4:first-child { margin-top: 0; }
+    .info-section p {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .bullet-list { list-style: none; margin-bottom: 22px; }
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+    .bullet-list li::before {
+      content: "•";
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      position: absolute;
+      left: 2px;
+      top: -6px;
+    }
+
+    /* 4 Kotak Deliverables Mint (Persis di PPT) */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+    .deliv-pill {
+      background: var(--mint-pill);
+      color: var(--mint-text);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-alert {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 3px solid var(--accent-amber);
+      padding-left: 12px;
+      margin-top: 15px;
+    }
+
+    /* Visual Screenshot Box (Sisi Kanan) */
+    .visual-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .visual-box {
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .visual-header {
+      background: var(--teal-card-header);
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .img-wrap {
+      cursor: zoom-in;
+      position: relative;
+      background: #f7faf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .img-wrap:hover img { transform: scale(1.02); }
+    .zoom-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 56, 48, 0.8);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* =========================================
+       LAYOUT CARD BEFORE & AFTER (SLIDE 5 & 13)
+       ========================================= */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .ba-column h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teal-card-header);
+      margin-bottom: 8px;
+    }
+    .ba-column p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      min-height: 48px;
+    }
+    .ba-img-card {
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+
+    /* 3 Highlight Pills di Bawah Slide 5 */
+    .highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 15px;
+      padding-top: 25px;
+      border-top: 1px solid #edf3f1;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f9fbfb;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+    }
+    .highlight-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-card-header);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .highlight-item span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+
+    /* Numbers Strip (Slide 12) */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .stat-pill {
+      background: #f4f8f7;
+      border: 1px solid var(--border-card);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat-pill .val {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--teal-card-header);
+      line-height: 1;
+    }
+    .stat-pill .lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Footer CTA */
+    .hire-box {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 40px;
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+    .hire-box h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+    .hire-box p { color: #cbdcd7; margin-bottom: 24px; }
+    .btn-email {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 36, 30, 0.94);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .lightbox-modal.active { display: flex; }
+    .lightbox-modal img {
+      max-width: 95%; max-height: 90vh;
+      border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 25px;
+      color: #fff; font-size: 2rem; background: none; border: none; cursor: pointer;
+    }
+
+    /* =========================================
+       RESPONSIVE PENYESUAIAN HP (SMARTPHONE)
+       ========================================= */
+    @media (max-width: 860px) {
+      .slide-card { padding: 24px 20px; }
+      .card-title { font-size: 1.5rem; }
+      .service-banner h1 { font-size: 2rem; }
+      .grid-slide-content { grid-template-columns: 1fr; gap: 28px; }
+      .before-after-grid { grid-template-columns: 1fr; }
+      .ba-column p { min-height: auto; }
+      .highlight-row { grid-template-columns: 1fr; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Top Navigation -->
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo"><i class="fa-solid fa-table-cells"></i> <span>Tiyan</span> Gandhi</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="data-entry.html" class="active">Data Entry</a></li>
-        <li><a href="admin-support.html">Admin Support</a></li>
-        <li><a href="web-research.html">Web Research</a></li>
-      </ul>
-      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-nav-contact">Contact Me</a>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-title">Tiyan Gandhi <span>Portofolio</span></a>
+      <a href="index.html" class="btn-back-hub"><i class="fa-solid fa-arrow-left"></i> Kembali ke Menu Utama</a>
     </div>
   </header>
 
-  <section class="page-banner">
+  <!-- Service Header Banner -->
+  <section class="service-banner">
     <div class="container">
-      <span class="banner-badge">SPECIALIZED SERVICE PORTFOLIO</span>
+      <span class="service-tag">Specialized Service Portfolio</span>
       <h1>Data Entry & Data Cleaning</h1>
-      <p>Clean, accurate spreadsheets with systematic change logs, standardized formatting, and deduplication for business databases.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Data Entry & Data Cleaning</span>
-      </div>
+      <p>Clean, organized, and reliable data you can use right away. Standardizing formats, de-duplicating records, and documenting transparent change logs.</p>
     </div>
   </section>
 
-  <main class="dedicated-content">
-    <div class="container">
+  <main class="container">
 
-      <!-- ================= PROJECT 1 (SLIDES 4 & 5) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 1: Order Data Cleaning & Processing</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Data Entry & Data Cleaning</span>
-            <span class="tag-tool">Tools: Google Sheets | Excel</span>
-          </div>
+    <!-- ===================================================================
+         PROJECT 1 - CARD 1 (SLIDE 4: OBJECTIVE, DELIVERABLES & PROOF)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 1: Order Data Cleaning & Processing</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Data Entry & Data Cleaning</span>
+          <span class="badge-teal">Tools: Google Sheets | Excel</span>
         </div>
-
-        <!-- Part 1: Scope & Deliverables (Slide 4) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-file-lines"></i> Part 1: Objective & Scope of Work <span>Slide 4</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Objective</h4>
-              <p>Cleaned and standardized a fictional customer order database merged from several sources: a CRM export, a sales spreadsheet, and manual entries.</p>
-              
-              <h4>What I Did</h4>
-              <ul class="project-bullets">
-                <li>Standardized names, company names, cities, and states.</li>
-                <li>Unified phone numbers (extensions in a separate column), ZIP codes with leading zeros, dates (MM/DD/YYYY), and amounts as numbers.</li>
-                <li>Standardized order statuses and removed duplicate and test records.</li>
-                <li>Fixed email typos only when the correct version appeared elsewhere in the data, and flagged unclear items instead of guessing.</li>
-              </ul>
-
-              <h4>Deliverables</h4>
-              <div class="deliv-grid">
-                <div class="deliv-item">Clean Data sheet, ready to import</div>
-                <div class="deliv-item">Change Log of every correction</div>
-                <div class="deliv-item">Flagged Items for the client</div>
-                <div class="deliv-item">Needs Review formula column</div>
-              </div>
-
-              <div class="result-box">
-                <strong>Result:</strong> A consistent, import-ready dataset with a full record of every change.
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 4 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>CHANGE LOG | Every correction documented</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Change Log Slide 4 -->
-                  <img src="images/project1-changelog.png" alt="Change Log Slide 4" onerror="this.src='https://placehold.co/800x450/19584d/ffffff?text=Screenshot+Change+Log+(Slide+4)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>FLAGGED ITEMS | Questions for the client</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Flagged Items Slide 4 -->
-                  <img src="images/project1-flagged.png" alt="Flagged Items Slide 4" onerror="this.src='https://placehold.co/800x350/19584d/ffffff?text=Screenshot+Flagged+Items+(Slide+4)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: Before & After (Slide 5) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-code-compare"></i> Part 2: Before & After Demonstration <span>Slide 5</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Transformation Summary</h4>
-              <ul class="project-bullets">
-                <li><strong>BEFORE:</strong> Raw merged data from CRM export, sales sheet, manual entries with mixed formats, duplicates, and typos.</li>
-                <li><strong>AFTER:</strong> Clean, import-ready data with consistent formats, duplicates removed, and a 'Needs Review' column marking records needing confirmation.</li>
-              </ul>
-              
-              <h4>Key Highlights</h4>
-              <ul class="project-bullets">
-                <li>Duplicate and test records completely removed.</li>
-                <li>One unified format for phones, dates, and amounts.</li>
-                <li>Unclear items flagged, never guessed.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 5 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>BEFORE (Raw Data) vs AFTER (Clean, Import-Ready Data)</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Before After Slide 5 -->
-                  <img src="images/project1-before-after.png" alt="Before and After Slide 5" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+Before+vs+After+(Slide+5)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ================= PROJECT 5 (SLIDES 12 & 13) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 5: US City Research & Data Cleaning</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Data Cleaning</span>
-            <span class="tag-tool">Tools: Google Sheets | Excel</span>
-          </div>
-        </div>
-
-        <!-- Part 1: Scope & Metrics (Slide 12) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-file-lines"></i> Part 1: Research, Verification & Metrics <span>Slide 12</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Objective</h4>
-              <p>Researched and verified city names in a 100-record dataset, standardized valid US cities, and excluded fictional locations, working on a copy so the raw data stayed intact.</p>
-
-              <h4>What I Did</h4>
-              <ul class="project-bullets">
-                <li>Researched 62 unique city values using official city sites and Wikipedia.</li>
-                <li>Expanded abbreviations (LA, SF, NYC) and fixed typos and extra spaces.</li>
-                <li>Kept ambiguous names (Springfield, Washington) as is, not guessed.</li>
-                <li>Excluded fictional cities (Gotham, Smallville) from the clean data.</li>
-              </ul>
-
-              <h4>Results in Numbers</h4>
-              <div class="metric-row">
-                <div class="metric-box"><div class="num">100</div><div class="lbl">Records</div></div>
-                <div class="metric-box"><div class="num">62</div><div class="lbl">Unique Cities</div></div>
-                <div class="metric-box"><div class="num">95</div><div class="lbl">Clean</div></div>
-                <div class="metric-box"><div class="num">5</div><div class="lbl">Excluded</div></div>
-              </div>
-
-              <h4>Deliverables</h4>
-              <div class="deliv-grid">
-                <div class="deliv-item">Clean Data sheet (95)</div>
-                <div class="deliv-item">Exclude sheet (5)</div>
-                <div class="deliv-item">City Research + URLs</div>
-                <div class="deliv-item">Change Log & Summary</div>
-              </div>
-
-              <div class="result-box">
-                <strong>Result:</strong> A clean US city dataset where every decision has a source.
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 12 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>CITY RESEARCH | Source for every city</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot City Research Slide 12 -->
-                  <img src="images/project5-city-research.png" alt="City Research Slide 12" onerror="this.src='https://placehold.co/800x450/19584d/ffffff?text=Screenshot+City+Research+(Slide+12)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: Before & After (Slide 13) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-code-compare"></i> Part 2: Before & After Comparison <span>Slide 13</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Transformation Details</h4>
-              <ul class="project-bullets">
-                <li><strong>BEFORE:</strong> 100 original records with research decision, standardized city, and source URL for each one.</li>
-                <li><strong>AFTER:</strong> 95 clean records: abbreviations expanded, typos fixed, and fictional locations removed.</li>
-              </ul>
-              <h4>Quality Rules</h4>
-              <ul class="project-bullets">
-                <li>Fictional locations excluded into a dedicated sheet.</li>
-                <li>One standard name per city with verified census links.</li>
-                <li>Ambiguous names kept, not guessed.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 13 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>BEFORE (Raw data + research) vs AFTER (Clean data)</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Before After Slide 13 -->
-                  <img src="images/project5-before-after.png" alt="Before After Slide 13" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+Before+vs+After+(Slide+13)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Bottom Hire CTA -->
-      <div class="subpage-cta">
-        <h3>Need Accurate, Organized Data for Your Business?</h3>
-        <p>I can help clean your spreadsheets, remove duplicates, and build structured databases.</p>
-        <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-hire"><i class="fa-solid fa-envelope"></i> Hire Me for Data Entry</a>
       </div>
 
+      <div class="grid-slide-content">
+        <!-- Kolom Kiri: Penjelasan Slide 4 -->
+        <div class="info-section">
+          <h4>Objective</h4>
+          <p>Cleaned and standardized a fictional customer order database merged from several sources: a CRM export, a sales spreadsheet, and manual entries.</p>
+
+          <h4>What I Did</h4>
+          <ul class="bullet-list">
+            <li>Standardized names, company names, cities, and states.</li>
+            <li>Unified phone numbers (extensions in a separate column), ZIP codes with leading zeros, dates (MM/DD/YYYY), and amounts as numbers.</li>
+            <li>Standardized order statuses and removed duplicate and test records.</li>
+            <li>Fixed email typos only when the correct version appeared elsewhere in the data, and flagged unclear items instead of guessing.</li>
+          </ul>
+
+          <h4>Deliverables</h4>
+          <div class="deliverables-grid">
+            <div class="deliv-pill">Clean Data sheet, ready to import</div>
+            <div class="deliv-pill">Change Log of every correction</div>
+            <div class="deliv-pill">Flagged Items for the client</div>
+            <div class="deliv-pill">Needs Review formula column</div>
+          </div>
+
+          <div class="result-alert">
+            Result: A consistent, import-ready dataset with a full record of every change.
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: 2 Spot Gambar Slide 4 -->
+        <div class="visual-stack">
+          <!-- Gambar 1: Change Log -->
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>CHANGE LOG | Every correction documented</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p1-changelog.png -->
+              <img src="images/p1-changelog.png" alt="Change Log Slide 4" onerror="this.src='https://placehold.co/900x480/13463c/ffffff?text=Screenshot+Change+Log+(Slide+4)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+
+          <!-- Gambar 2: Flagged Items -->
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>FLAGGED ITEMS | Questions for the client</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p1-flagged.png -->
+              <img src="images/p1-flagged.png" alt="Flagged Items Slide 4" onerror="this.src='https://placehold.co/900x400/13463c/ffffff?text=Screenshot+Flagged+Items+(Slide+4)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 1 - CARD 2 (SLIDE 5: BEFORE & AFTER COMPARISON)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 1: Before & After</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Comparison View</span>
+        </div>
+      </div>
+
+      <!-- 2 Kolom Berdampingan: Raw vs Clean Data -->
+      <div class="before-after-grid">
+        <!-- Before -->
+        <div class="ba-column">
+          <h4>BEFORE | Raw merged data</h4>
+          <p>Data merged from a CRM export, a sales spreadsheet, and manual entries: mixed formats, duplicates, and typos.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p1-before.png -->
+              <img src="images/p1-before.png" alt="Raw Merged Data Slide 5" onerror="this.src='https://placehold.co/800x450/0f3830/ffffff?text=Screenshot+BEFORE+Raw+Data+(Slide+5)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- After -->
+        <div class="ba-column">
+          <h4>AFTER | Clean, import-ready data</h4>
+          <p>Consistent formats, duplicates removed, and a Needs Review column that marks records needing confirmation.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p1-after.png -->
+              <img src="images/p1-after.png" alt="Clean Import Ready Data Slide 5" onerror="this.src='https://placehold.co/800x450/13463c/ffffff?text=Screenshot+AFTER+Clean+Data+(Slide+5)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Poin Highlight Bulat di Bawah Slide 5 -->
+      <div class="highlight-row">
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-trash-can"></i></div>
+          <span>Duplicate and test records removed</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-check"></i></div>
+          <span>One format for phones, dates, and amounts</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-flag"></i></div>
+          <span>Unclear items flagged, not guessed</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ===================================================================
+         PROJECT 5 - CARD 1 (SLIDE 12: CITY RESEARCH & DELIVERABLES)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 5: US City Research & Data Cleaning</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Data Research & Data Cleaning</span>
+          <span class="badge-teal">Tools: Google Sheets | Excel</span>
+        </div>
+      </div>
+
+      <div class="grid-slide-content">
+        <!-- Kolom Kiri: Penjelasan Slide 12 -->
+        <div class="info-section">
+          <h4>Objective</h4>
+          <p>Researched and verified the city names in a 100-record dataset, standardized valid US cities, and excluded fictional locations, working on a copy so the raw data stayed intact.</p>
+
+          <h4>What I Did</h4>
+          <ul class="bullet-list">
+            <li>Researched 62 unique city values using official city sites and Wikipedia.</li>
+            <li>Expanded abbreviations (LA, SF, NYC) and fixed typos and extra spaces.</li>
+            <li>Kept ambiguous names (Springfield, Washington) as is, not guessed.</li>
+            <li>Excluded fictional cities (Gotham, Smallville) from the clean data.</li>
+          </ul>
+
+          <h4>Deliverables</h4>
+          <div class="deliverables-grid">
+            <div class="deliv-pill">Clean Data sheet (95 records)</div>
+            <div class="deliv-pill">Exclude Data sheet (5 records)</div>
+            <div class="deliv-pill">City Research with source URLs</div>
+            <div class="deliv-pill">Change Log and Summary</div>
+          </div>
+
+          <div class="result-alert">
+            Result: A clean US city dataset where every decision has a source.
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Gambar Slide 12 + Summary Numbers -->
+        <div class="visual-stack">
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>CITY RESEARCH | Source for every city</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p5-research.png -->
+              <img src="images/p5-research.png" alt="City Research Slide 12" onerror="this.src='https://placehold.co/900x420/13463c/ffffff?text=Screenshot+City+Research+(Slide+12)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+
+          <!-- SUMMARY | Results in numbers (Slide 12) -->
+          <div style="background: #ffffff; border: 1px solid var(--border-card); border-radius: 14px; padding: 16px 20px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--teal-card-header); letter-spacing: 0.5px;">SUMMARY | Results in numbers</span>
+            <div class="stats-strip">
+              <div class="stat-pill"><div class="val">100</div><div class="lbl">Records</div></div>
+              <div class="stat-pill"><div class="val">62</div><div class="lbl">Unique cities</div></div>
+              <div class="stat-pill"><div class="val">95</div><div class="lbl">Clean</div></div>
+              <div class="stat-pill"><div class="val">5</div><div class="lbl">Excluded</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 5 - CARD 2 (SLIDE 13: BEFORE & AFTER)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 5: Before & After</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Comparison View</span>
+        </div>
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-column">
+          <h4>BEFORE | Raw data + research</h4>
+          <p>100 original records with the research decision, standardized city, and source URL for each one.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p5-before.png -->
+              <img src="images/p5-before.png" alt="Before City Data Slide 13" onerror="this.src='https://placehold.co/800x450/0f3830/ffffff?text=Screenshot+BEFORE+City+Data+(Slide+13)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-column">
+          <h4>AFTER | Clean data</h4>
+          <p>95 clean records: abbreviations expanded, typos fixed, and fictional locations removed.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI DENGAN GAMBAR ASLI: images/p5-after.png -->
+              <img src="images/p5-after.png" alt="After Clean City Data Slide 13" onerror="this.src='https://placehold.co/800x450/13463c/ffffff?text=Screenshot+AFTER+Clean+City+(Slide+13)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Poin Highlight Bulat di Bawah Slide 13 -->
+      <div class="highlight-row">
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+          <span>Fictional locations excluded</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-check-double"></i></div>
+          <span>One standard name per city</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-circle-question"></i></div>
+          <span>Ambiguous names kept, not guessed</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Hire Me CTA -->
+    <div class="hire-box">
+      <h3>Need Clean, Reliable Spreadsheets?</h3>
+      <p>I am available for Data Entry, Spreadsheet Cleaning, and Database Formatting projects.</p>
+      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-email"><i class="fa-solid fa-envelope"></i> Hire Me for Data Entry</a>
     </div>
+
   </main>
 
-  <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close">&times;</button><img id="lightbox-img" src=""></div>
+  <!-- Lightbox Modal Fullscreen -->
+  <div class="lightbox-modal" id="zoomModal" onclick="closeZoom()">
+    <button class="lightbox-close">&times;</button>
+    <img id="zoomImg" src="">
+  </div>
+
   <script>
-    function openLightbox(el){ document.getElementById('lightbox-img').src = el.querySelector('img').src; document.getElementById('lightbox').classList.add('active'); }
-    function closeLightbox(){ document.getElementById('lightbox').classList.remove('active'); }
+    function openZoom(el) {
+      const src = el.querySelector('img').src;
+      document.getElementById('zoomImg').src = src;
+      document.getElementById('zoomModal').classList.add('active');
+    }
+    function closeZoom() {
+      document.getElementById('zoomModal').classList.remove('active');
+    }
   </script>
 </body>
 </html>
