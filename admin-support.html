@@ -3,285 +3,632 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Support & Spreadsheet Systems | Tiyan Gandhi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Admin Support & Spreadsheet Systems | Tiyan Gandhi Manara</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-body: #f4f7f6;
+      --primary-dark: #0f3830;
+      --teal-card-header: #13463c;
+      --accent-amber: #e5a84b;
+      --mint-pill: #d6eee7;
+      --mint-text: #0e4438;
+      --text-dark: #1b2e2b;
+      --text-muted: #4e635f;
+      --border-card: #d9e6e2;
+      --radius-card: 20px;
+      --shadow-card: 0 10px 30px rgba(15, 56, 48, 0.07);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background-color: var(--primary-dark);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+    .brand-title span { color: var(--accent-amber); }
+    .btn-back-hub {
+      color: #cbdcd7; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px; transition: 0.2s;
+    }
+    .btn-back-hub:hover { color: var(--accent-amber); }
+
+    .service-banner {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 50px 0 60px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-bottom: 45px;
+    }
+    .service-tag {
+      color: var(--accent-amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.82rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .service-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+    .service-banner p { color: #cbdcd7; font-size: 1.1rem; max-width: 750px; }
+
+    .slide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #edf3f1;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+    }
+    .card-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge-amber {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .badge-teal {
+      background: var(--teal-card-header);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .grid-slide-content {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .info-section h4 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .info-section h4:first-child { margin-top: 0; }
+    .info-section p { font-size: 0.95rem; color: var(--text-dark); margin-bottom: 14px; }
+    .bullet-list { list-style: none; margin-bottom: 22px; }
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+    .bullet-list li::before {
+      content: "•";
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      position: absolute;
+      left: 2px;
+      top: -6px;
+    }
+
+    /* Workflow Horizontal Strip (Slide 6 & Slide 16) */
+    .workflow-strip {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 12px 0 20px;
+    }
+    .wf-pill {
+      background: var(--teal-card-header);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+    .wf-arrow { color: var(--accent-amber); font-weight: bold; }
+
+    .result-alert {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-left: 3px solid var(--accent-amber);
+      background: #f8faf9;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+    }
+
+    /* Visual Stack Sisi Kanan */
+    .visual-stack { display: flex; flex-direction: column; gap: 20px; }
+    .visual-box {
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .visual-header {
+      background: var(--teal-card-header);
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .img-wrap {
+      cursor: zoom-in;
+      position: relative;
+      background: #f7faf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .img-wrap:hover img { transform: scale(1.02); }
+    .zoom-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 56, 48, 0.8);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* Side-by-Side (Slide 7) */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .ba-column h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teal-card-header);
+      margin-bottom: 8px;
+    }
+    .ba-column p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      min-height: 44px;
+    }
+    .ba-img-card {
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* 3 Highlight Pills di Bawah */
+    .highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 15px;
+      padding-top: 25px;
+      border-top: 1px solid #edf3f1;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f9fbfb;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+    }
+    .highlight-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-card-header);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .highlight-item span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+
+    /* 2x2 Grid Khusus Slide 9 */
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .hire-box {
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 40px;
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+    .hire-box h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+    .hire-box p { color: #cbdcd7; margin-bottom: 24px; }
+    .btn-email {
+      background: var(--accent-amber);
+      color: var(--primary-dark);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 36, 30, 0.94);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .lightbox-modal.active { display: flex; }
+    .lightbox-modal img {
+      max-width: 95%; max-height: 90vh;
+      border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 25px;
+      color: #fff; font-size: 2rem; background: none; border: none; cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .slide-card { padding: 24px 20px; }
+      .card-title { font-size: 1.5rem; }
+      .service-banner h1 { font-size: 2rem; }
+      .grid-slide-content { grid-template-columns: 1fr; gap: 28px; }
+      .before-after-grid { grid-template-columns: 1fr; }
+      .grid-2x2 { grid-template-columns: 1fr; }
+      .ba-column p { min-height: auto; }
+      .highlight-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo"><i class="fa-solid fa-table-cells"></i> <span>Tiyan</span> Gandhi</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="data-entry.html">Data Entry</a></li>
-        <li><a href="admin-support.html" class="active">Admin Support</a></li>
-        <li><a href="web-research.html">Web Research</a></li>
-      </ul>
-      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-nav-contact">Contact Me</a>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-title">Tiyan Gandhi <span>Portofolio</span></a>
+      <a href="index.html" class="btn-back-hub"><i class="fa-solid fa-arrow-left"></i> Kembali ke Menu Utama</a>
     </div>
   </header>
 
-  <section class="page-banner">
+  <section class="service-banner">
     <div class="container">
-      <span class="banner-badge">SPECIALIZED SERVICE PORTFOLIO</span>
+      <span class="service-tag">Specialized Service Portfolio</span>
       <h1>Admin Support & Spreadsheet Systems</h1>
-      <p>End-to-end operational admin support: stock balance, print-ready invoicing, automated spreadsheets, and monthly closing reporting.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Admin Support</span>
-      </div>
+      <p>Building automated workflows, inventory control, print-ready invoicing, and robust spreadsheet systems that minimize human error.</p>
     </div>
   </section>
 
-  <main class="dedicated-content">
-    <div class="container">
+  <main class="container">
 
-      <!-- ================= PROJECT 2 (SLIDES 6 & 7) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 2: Inventory & Sales Tracking System</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Data Entry & Admin Support</span>
-            <span class="tag-tool">Tools: Microsoft Excel</span>
-          </div>
+    <!-- ===================================================================
+         PROJECT 2 - CARD 1 (SLIDE 6: INVENTORY & SALES TRACKING)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 2: Inventory & Sales Tracking System</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Data Entry & Admin Support</span>
+          <span class="badge-teal">Tools: Microsoft Excel</span>
         </div>
-
-        <!-- Part 1: Scope & Workflow (Slide 6) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-diagram-project"></i> Part 1: Workflow & System Setup <span>Slide 6</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>System Context</h4>
-              <p>An end-to-end Excel system, from purchasing to profit reporting. Built and used daily for an investor-backed import and distribution venture (beef and frozen buffalo) across West Java and other regions, as part of a 4-person founding team.</p>
-
-              <h4>Workflow</h4>
-              <div class="workflow-row">
-                <span class="wf-step">Master Data</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">PO</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">Stock In</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">Invoice / Stock Out</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">Stock Balance</span> <span class="wf-arrow">→</span>
-                <span class="wf-step">Reports</span>
-              </div>
-
-              <h4>What It Does</h4>
-              <ul class="project-bullets">
-                <li>Records POs, stock in, stock out, and adjustments for shrinkage.</li>
-                <li>Prints POs and invoices, and updates stock balances (opening, in, out, available) automatically.</li>
-                <li>Reports sales, margin, payables, receivables, and daily profit and loss.</li>
-              </ul>
-
-              <div class="result-box">
-                <strong>My Role:</strong> I designed the workflow and built the sheets with simple formulas, entered the data daily, and prepared weekly and monthly reports, working with teammates on logistics and finance.
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 6 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>STOCK BALANCE | Opening, in, out, available</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Stock Balance Slide 6 -->
-                  <img src="images/project2-stock-balance.png" alt="Stock Balance Slide 6" onerror="this.src='https://placehold.co/800x400/19584d/ffffff?text=Screenshot+Stock+Balance+(Slide+6)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>INVOICE | Print-ready, filled by formula</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Invoice Slide 6 -->
-                  <img src="images/project2-invoice.png" alt="Invoice Slide 6" onerror="this.src='https://placehold.co/800x400/19584d/ffffff?text=Screenshot+Invoice+(Slide+6)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: Daily Entry & Reports (Slide 7) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-chart-line"></i> Part 2: Daily Entry & Monthly Reports <span>Slide 7</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>Daily Logging & Reporting</h4>
-              <ul class="project-bullets">
-                <li><strong>STOCK OUT:</strong> Each sale is logged daily by item, with quantity, weight, and totals calculated by simple formulas.</li>
-                <li><strong>SALES REPORT:</strong> Choose a month from the dropdown selector to list invoices, sales totals, and payment status.</li>
-              </ul>
-              <h4>Features Implemented</h4>
-              <ul class="project-bullets">
-                <li>Excel tables with instant filters.</li>
-                <li>Dropdown selectors for error-free date selection.</li>
-                <li>Formulas utilized: FILTER, IF, AND.</li>
-              </ul>
-              <p style="font-size: 0.8rem; color: #78908a; font-style: italic;">*Customer names, cost prices, and margins are hidden in screenshots for confidentiality.</p>
-            </div>
-
-            <!-- Spot Gambar Slide 7 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>STOCK OUT | Daily entry table</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Stock Out Slide 7 -->
-                  <img src="images/project2-stock-out.png" alt="Stock Out Slide 7" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+Stock+Out+(Slide+7)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>SALES REPORT | Monthly view</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Sales Report Slide 7 -->
-                  <img src="images/project2-sales-report.png" alt="Sales Report Slide 7" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+Sales+Report+(Slide+7)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ================= PROJECT 3 (SLIDES 8 & 9) ================= -->
-      <article class="project-wrapper">
-        <div class="project-master-header">
-          <h2>Project 3: Community Fee Administration System</h2>
-          <div class="project-tags">
-            <span class="tag-badge">Admin Support</span>
-            <span class="tag-tool">Tools: Google Sheets | GitHub Pages | Apps Script</span>
-          </div>
-        </div>
-
-        <!-- Part 1: Scope & Features (Slide 8) -->
-        <div class="slide-section">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-shield-halved"></i> Part 1: Problem & Administrative Solution <span>Slide 8</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>System Context</h4>
-              <p>A fee administration system for a housing committee, built on Google Sheets. A housing committee tracked monthly community fees in a large Google Sheets file full of formulas and settings. One wrong click could delete data, so I built a simple web interface on top of the same sheet.</p>
-
-              <h4>What It Does</h4>
-              <ul class="project-bullets">
-                <li>Dashboard with house totals, paid vs. unpaid this month, accumulated arrears, and a list filterable by block and payment status.</li>
-                <li>Separate login page for the committee to add and manage transactions without opening the spreadsheet.</li>
-                <li>Payment instructions with WhatsApp confirmation links for residents.</li>
-              </ul>
-
-              <h4>How It Works</h4>
-              <p>One Google Sheets file stays the single source of truth. Google Apps Script connects it to web pages (HTML, CSS, JavaScript) on GitHub Pages, so formulas and settings stay hidden.</p>
-
-              <div class="result-box">
-                <strong>My Role:</strong> I designed the workflow, data structure, and logic, used AI assistance for coding, and maintained up-to-date payment records.
-              </div>
-            </div>
-
-            <!-- Spot Gambar Slide 8 -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>WEB DASHBOARD | Resident view</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Dashboard Slide 8 -->
-                  <img src="images/project3-web-dashboard.png" alt="Web Dashboard Slide 8" onerror="this.src='https://placehold.co/800x400/19584d/ffffff?text=Screenshot+Web+Dashboard+(Slide+8)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>COMMITTEE VIEW | Payment status in Google Sheets</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Committee View Slide 8 -->
-                  <img src="images/project3-committee-view.png" alt="Committee View Slide 8" onerror="this.src='https://placehold.co/800x400/19584d/ffffff?text=Screenshot+Committee+View+(Slide+8)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part 2: System Architecture (Slide 9) -->
-        <div class="slide-section" style="background-color: #fafcfb;">
-          <div class="slide-section-title">
-            <i class="fa-solid fa-network-wired"></i> Part 2: How the System Works (Full Architecture) <span>Slide 9</span>
-          </div>
-          <div class="slide-grid">
-            <div class="slide-content">
-              <h4>4 Integrated Modules</h4>
-              <ul class="project-bullets">
-                <li><strong>DATA:</strong> Resident master data (unit codes, resident status, names).</li>
-                <li><strong>INPUT:</strong> Dedicated transaction sheet logging payment entries by date.</li>
-                <li><strong>AUTOMATION:</strong> Google Apps Script serving as the backend API bridge.</li>
-                <li><strong>INTERFACE:</strong> Clean web pages hosted on GitHub Pages for clean UI access.</li>
-              </ul>
-            </div>
-
-            <!-- Spot Gambar Slide 9 (4 Panel Grid) -->
-            <div class="slide-visuals">
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>DATA & INPUT | Master and Transaction Sheets</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Data & Input Slide 9 -->
-                  <img src="images/project3-data-input.png" alt="Data and Input Slide 9" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+Data+%26+Input+Sheets+(Slide+9)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-
-              <div class="evidence-card">
-                <div class="evidence-header">
-                  <span>AUTOMATION & INTERFACE | Apps Script & GitHub Pages</span>
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-                <div class="img-placeholder-box" onclick="openLightbox(this)">
-                  <!-- GANTI: Spot screenshot Code & UI Slide 9 -->
-                  <img src="images/project3-apps-script.png" alt="Apps Script Slide 9" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+Script+%26+GitHub+UI+(Slide+9)'">
-                  <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="subpage-cta">
-        <h3>Need Custom Admin Systems or Spreadsheet Automation?</h3>
-        <p>I can help streamline your daily reports, stock management, and invoicing workflows.</p>
-        <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-hire"><i class="fa-solid fa-envelope"></i> Hire Me for Admin Support</a>
       </div>
 
+      <div class="grid-slide-content">
+        <div class="info-section">
+          <h4>An end-to-end Excel system, from purchasing to profit reporting</h4>
+          <p>Built and used daily for an investor-backed import and distribution venture (beef and frozen buffalo) across West Java and other regions, as part of a 4-person founding team.</p>
+
+          <h4>Workflow</h4>
+          <div class="workflow-strip">
+            <span class="wf-pill">Master Data</span> <span class="wf-arrow">→</span>
+            <span class="wf-pill">PO</span> <span class="wf-arrow">→</span>
+            <span class="wf-pill">Stock In</span> <span class="wf-arrow">→</span>
+            <span class="wf-pill">Invoice / Stock Out</span> <span class="wf-arrow">→</span>
+            <span class="wf-pill">Stock Balance</span> <span class="wf-arrow">→</span>
+            <span class="wf-pill">Reports</span>
+          </div>
+
+          <h4>What It Does</h4>
+          <ul class="bullet-list">
+            <li>Records POs, stock in, stock out, and adjustments for shrinkage.</li>
+            <li>Prints POs and invoices, and updates stock balances (opening, in, out, available) automatically.</li>
+            <li>Reports sales, margin, payables, receivables, and daily profit and loss.</li>
+          </ul>
+
+          <div class="result-alert">
+            <strong>My role:</strong> I designed the workflow and built the sheets with simple formulas, entered the data daily, and prepared weekly and monthly reports, working with teammates on logistics and finance.
+          </div>
+        </div>
+
+        <div class="visual-stack">
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>STOCK BALANCE | Opening, in, out, available</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p2-stock-balance.png -->
+              <img src="images/p2-stock-balance.png" alt="Stock Balance Slide 6" onerror="this.src='https://placehold.co/900x440/13463c/ffffff?text=Screenshot+Stock+Balance+(Slide+6)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>INVOICE | Print-ready, filled by formula</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p2-invoice.png -->
+              <img src="images/p2-invoice.png" alt="Invoice Template Slide 6" onerror="this.src='https://placehold.co/900x440/13463c/ffffff?text=Screenshot+Invoice+(Slide+6)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: #78908a; font-style: italic; text-align: right;">*Customer names, cost prices, and margins are hidden in screenshots.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 2 - CARD 2 (SLIDE 7: DAILY ENTRY & REPORTS)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 2: Daily Entry & Reports</h2>
+        <div class="card-badges">
+          <span class="badge-teal">Operational View</span>
+        </div>
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-column">
+          <h4>STOCK OUT | Daily entry table</h4>
+          <p>Each sale is logged daily by item, with quantity, weight, and totals calculated by simple formulas.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p2-stock-out.png -->
+              <img src="images/p2-stock-out.png" alt="Stock Out Slide 7" onerror="this.src='https://placehold.co/800x450/0f342c/ffffff?text=Screenshot+Stock+Out+(Slide+7)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-column">
+          <h4>SALES REPORT | Monthly view</h4>
+          <p>Choose a month from the dropdown to list invoices, sales totals, and payment status.</p>
+          <div class="ba-img-card">
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p2-sales-report.png -->
+              <img src="images/p2-sales-report.png" alt="Sales Report Slide 7" onerror="this.src='https://placehold.co/800x450/13463c/ffffff?text=Screenshot+Sales+Report+(Slide+7)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-row">
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-table-cells"></i></div>
+          <span>Excel tables with filters</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-list-check"></i></div>
+          <span>Dropdown selectors</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon"><i class="fa-solid fa-calculator"></i></div>
+          <span>Simple formulas (FILTER, IF, AND)</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ===================================================================
+         PROJECT 3 - CARD 1 (SLIDE 8: COMMUNITY FEE SYSTEM)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 3: Community Fee Administration System</h2>
+        <div class="card-badges">
+          <span class="badge-amber">Admin Support</span>
+          <span class="badge-teal">Spreadsheet Management | Google Sheets | GitHub Pages</span>
+        </div>
+      </div>
+
+      <div class="grid-slide-content">
+        <div class="info-section">
+          <h4>A fee administration system for a housing committee, built on Google Sheets</h4>
+          <p>A housing committee tracked monthly community fees in a large Google Sheets file full of formulas and settings. One wrong click could delete data, so I built a simple web interface on top of the same sheet.</p>
+
+          <h4>What It Does</h4>
+          <ul class="bullet-list">
+            <li>Dashboard with house totals, paid vs. unpaid this month, accumulated arrears, and a list filterable by block and payment status.</li>
+            <li>Separate login page for the committee to add and manage transactions without opening the spreadsheet.</li>
+            <li>Payment instructions with WhatsApp confirmation links for residents.</li>
+          </ul>
+
+          <h4>How It Works</h4>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px;">One Google Sheets file stays the single source of truth. Google Apps Script connects it to web pages (HTML, CSS, JavaScript) on GitHub Pages, so formulas and settings stay hidden.</p>
+
+          <div class="result-alert">
+            <strong>My role:</strong> I designed the workflow, data structure, and logic, used AI assistance for coding, and maintained up-to-date payment records.
+          </div>
+        </div>
+
+        <div class="visual-stack">
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>WEB DASHBOARD | Resident view</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p3-dashboard.png -->
+              <img src="images/p3-dashboard.png" alt="Web Dashboard Slide 8" onerror="this.src='https://placehold.co/900x420/13463c/ffffff?text=Screenshot+Web+Dashboard+(Slide+8)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+
+          <div class="visual-box">
+            <div class="visual-header">
+              <span>COMMITTEE VIEW | Payment status in Google Sheets</span>
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="img-wrap" onclick="openZoom(this)">
+              <!-- GANTI GAMBAR: images/p3-committee.png -->
+              <img src="images/p3-committee.png" alt="Committee View Slide 8" onerror="this.src='https://placehold.co/900x420/13463c/ffffff?text=Screenshot+Committee+View+(Slide+8)'">
+              <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================================================================
+         PROJECT 3 - CARD 2 (SLIDE 9: HOW THE SYSTEM WORKS)
+         =================================================================== -->
+    <article class="slide-card">
+      <div class="card-top">
+        <h2 class="card-title">Project 3: How the System Works</h2>
+        <div class="card-badges">
+          <span class="badge-teal">4-Module Architecture</span>
+        </div>
+      </div>
+
+      <!-- 2x2 Grid Spot Gambar Slide 9 -->
+      <div class="grid-2x2">
+        <div class="visual-box">
+          <div class="visual-header">
+            <span>DATA | Resident master data</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div class="img-wrap" onclick="openZoom(this)">
+            <!-- GANTI GAMBAR: images/p3-data.png -->
+            <img src="images/p3-data.png" alt="Resident Master Data Slide 9" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+DATA+Master+Sheet+(Slide+9)'">
+            <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="visual-header">
+            <span>INPUT | Transaction sheet</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div class="img-wrap" onclick="openZoom(this)">
+            <!-- GANTI GAMBAR: images/p3-input.png -->
+            <img src="images/p3-input.png" alt="Transaction Sheet Slide 9" onerror="this.src='https://placehold.co/800x400/13463c/ffffff?text=Screenshot+INPUT+Transaction+(Slide+9)'">
+            <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="visual-header">
+            <span>AUTOMATION | Google Apps Script</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div class="img-wrap" onclick="openZoom(this)">
+            <!-- GANTI GAMBAR: images/p3-script.png -->
+            <img src="images/p3-script.png" alt="Google Apps Script Slide 9" onerror="this.src='https://placehold.co/800x400/13463c/ffffff?text=Screenshot+AUTOMATION+Script+(Slide+9)'">
+            <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="visual-header">
+            <span>INTERFACE | Web pages on GitHub Pages</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div class="img-wrap" onclick="openZoom(this)">
+            <!-- GANTI GAMBAR: images/p3-interface.png -->
+            <img src="images/p3-interface.png" alt="Interface GitHub Pages Slide 9" onerror="this.src='https://placehold.co/800x400/0f342c/ffffff?text=Screenshot+INTERFACE+GitHub+(Slide+9)'">
+            <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="hire-box">
+      <h3>Need an End-to-End Administrative Specialist?</h3>
+      <p>I can help organize your inventory, automate routine reports, and set up foolproof spreadsheets.</p>
+      <a href="mailto:tiyangandhi.bisnis@gmail.com" class="btn-email"><i class="fa-solid fa-envelope"></i> Hire Me for Admin Support</a>
     </div>
+
   </main>
 
-  <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close">&times;</button><img id="lightbox-img" src=""></div>
+  <div class="lightbox-modal" id="zoomModal" onclick="closeZoom()">
+    <button class="lightbox-close">&times;</button>
+    <img id="zoomImg" src="">
+  </div>
+
   <script>
-    function openLightbox(el){ document.getElementById('lightbox-img').src = el.querySelector('img').src; document.getElementById('lightbox').classList.add('active'); }
-    function closeLightbox(){ document.getElementById('lightbox').classList.remove('active'); }
+    function openZoom(el) {
+      document.getElementById('zoomImg').src = el.querySelector('img').src;
+      document.getElementById('zoomModal').classList.add('active');
+    }
+    function closeZoom() {
+      document.getElementById('zoomModal').classList.remove('active');
+    }
   </script>
 </body>
 </html>
